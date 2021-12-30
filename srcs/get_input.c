@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2021/12/30 16:23:36 by fle-blay         ###   ########.fr       */
+/*   Updated: 2021/12/30 18:09:36 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ int	is_atoiable(char **tab)
 	int	sign;
 
 	i = 0;
-	j = 0;
 	while (tab[i])
 	{
 		sign = 0;
 		j = 0;
+		if (ft_strlen(tab[i]) == 1 && (tab[i][0] == '-' || tab[i][0] == '+'))
+			return (0);
 		while (tab[i][j])
 		{
-		//	printf("tab[%d][%d] : %c\n", i, j, tab[i][j]);
 			if (!ft_isdigit(tab[i][j]) && tab[i][j] != '-' && tab[i][j] != '+')
 				return (0);
 			if (tab[i][j] == '-' || tab[i][j] == '+')
@@ -102,39 +102,6 @@ int	is_atoiable(char **tab)
 		i++;
 	}
 	return (1);
-}
-
-long	*make_it_int(char **tab, int *size_tab)
-{
-	long	*tab_int;
-	int		i;
-	int		error;
-
-	error = 0;
-	i = 0;
-	if (!is_atoiable(tab))
-	{
-		printf("not atoiable\n");
-		return (NULL);
-	}
-	while (tab[i])
-		i++;
-	*size_tab = i;
-	tab_int = (long *)malloc((*size_tab) * sizeof(long));
-	if (!tab_int)
-		return (NULL);
-	i = 0;
-	while (tab[i])
-	{
-		tab_int[i] = ft_atol(tab[i], &error);
-		if (error)
-		{
-			printf("under ou overflow int\n");
-			return (NULL);
-		}
-		i++;
-	}
-	return (tab_int);
 }
 
 int	is_uniq(long tab[], int size)
@@ -157,11 +124,79 @@ int	is_uniq(long tab[], int size)
 	return (1);
 }
 
+long	*make_it_int(char **tab, int *size_tab, int *error)
+{
+	long	*tab_int;
+	int		i;
+
+	i = 0;
+	if (!is_atoiable(tab))
+	{
+		*error = 1;
+		return (NULL);
+	}
+	while (tab[i])
+		i++;
+	*size_tab = i;
+	tab_int = (long *)malloc((*size_tab) * sizeof(long));
+	if (!tab_int)
+		return (NULL);
+	i = -1;
+	while (tab[++i] && !(*error))
+		tab_int[i] = ft_atol(tab[i], error);
+	if (!(*error) && !is_uniq(tab_int, *size_tab))
+		*error = 1;
+	return (tab_int);
+}
+
+void	custom_exit(int error)
+{
+	if (error)
+		ft_putstr_fd("Error\n",2);
+	exit(0);
+}
+
+void	destroy_tab(char **tab)
+{
+	int i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
+long	*get_int_tab(char **av, int *size_tab)
+{
+	char	**tab;
+	long	*tab_int;
+	int		error;
+
+	tab_int = NULL;
+	error = 0;
+	tab = get_char_tab(++av);
+	if (!tab)
+		return (NULL);
+	tab_int = make_it_int(tab, size_tab, &error);
+	destroy_tab(tab);
+	if (error || !tab)
+	{
+		free(tab_int);
+		custom_exit(error);
+	}
+	return (tab_int);
+}
+
+#include <stdlib.h>
 int	main(int ac, char *av[])
 {
 	(void)ac;
-	char **tab;
+/*	char **tab;
 	int	size_tab = 0;
+	int	error = 0;
 	long	*tab_int = 0;
 
 	tab = get_char_tab(++av);
@@ -174,12 +209,17 @@ int	main(int ac, char *av[])
 	}
 	//free(tab);
 
-	tab_int = make_it_int(tab, &size_tab);
+	tab_int = make_it_int(tab, &size_tab, &error);
 	if (!tab_int)
 	{
 		printf("error making int tab");
 		return (0);
-	}
+	}*/
+	long *tab_int;
+	int	size_tab;
+	int	i;
+
+	tab_int = get_int_tab(av, &size_tab);
 	i = 0;
 	while (i < size_tab)
 	{
@@ -187,5 +227,7 @@ int	main(int ac, char *av[])
 		i++;
 	}
 	printf("isuniq and int %d\n", is_uniq(tab_int, size_tab));
+	//printf("error : %d\n", error);
+	printf("atoi de + %d\n", atoi("-"));
 	return (0);
 }
