@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2021/12/30 13:24:36 by fle-blay         ###   ########.fr       */
+/*   Updated: 2021/12/30 16:23:36 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-int	ft_atol(const char *nptr)
+long	ft_atol(const char *nptr, int *error)
 {
-	int				i;
-	long long int	nbr;
-	int				sign;
+	int		i;
+	long	nbr;
+	int		sign;
 
 	i = 0;
 	sign = 1;
@@ -43,9 +43,9 @@ int	ft_atol(const char *nptr)
 	}
 	while (ft_isdigit(nptr[i]))
 	{
-		nbr *= 10;
-		nbr += nptr[i] - 48;
-		i++;
+		nbr = 10 * nbr + nptr[i++] - 48;
+		if ((sign == -1 && nbr > 2147483648) || (sign == 1 && nbr > 2147483647))
+			*error = 1;
 	}
 	return (sign * nbr);
 }
@@ -80,55 +80,66 @@ int	is_atoiable(char **tab)
 {
 	int	i;
 	int	j;
+	int	sign;
 
 	i = 0;
 	j = 0;
 	while (tab[i])
 	{
-		//verif longueur max pour empecher les overflow coquins 
-		//4294967296
-		//surtout (longmax) -(long min) + nb_qui_rentre_dans_int
+		sign = 0;
 		j = 0;
 		while (tab[i][j])
 		{
+		//	printf("tab[%d][%d] : %c\n", i, j, tab[i][j]);
 			if (!ft_isdigit(tab[i][j]) && tab[i][j] != '-' && tab[i][j] != '+')
-			{
-				printf("non atoiable\n");
 				return (0);
-			}
+			if (tab[i][j] == '-' || tab[i][j] == '+')
+				sign++;
 			j++;
 		}
+		if (sign > 1)
+			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	*make_it_int(char **tab, int* size_tab)
+long	*make_it_int(char **tab, int *size_tab)
 {
-	// a faire avec des long pour detecter erreurs !
-	int	*tab_int = 0;
-	int	i = 0;
-	
-	if (!tab || !is_atoiable(tab))
+	long	*tab_int;
+	int		i;
+	int		error;
+
+	error = 0;
+	i = 0;
+	if (!is_atoiable(tab))
+	{
+		printf("not atoiable\n");
 		return (NULL);
+	}
 	while (tab[i])
 		i++;
 	*size_tab = i;
-	tab_int = (int *)malloc((*size_tab) * sizeof(int));
+	tab_int = (long *)malloc((*size_tab) * sizeof(long));
 	if (!tab_int)
 		return (NULL);
 	i = 0;
 	while (tab[i])
 	{
-		tab_int[i] = ft_atoi(tab[i]);
+		tab_int[i] = ft_atol(tab[i], &error);
+		if (error)
+		{
+			printf("under ou overflow int\n");
+			return (NULL);
+		}
 		i++;
 	}
 	return (tab_int);
 }
 
-int	is_uniq_and_int(int tab[], int size)
+int	is_uniq(long tab[], int size)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 0;
@@ -137,8 +148,7 @@ int	is_uniq_and_int(int tab[], int size)
 		j = i + 1;
 		while (j < size)
 		{
-			if (tab[i] == tab[j] || tab[i] < -2147483648
-				|| tab[i] > 2147483647)
+			if (tab[i] == tab[j])
 				return (0);
 			j++;
 		}
@@ -152,7 +162,7 @@ int	main(int ac, char *av[])
 	(void)ac;
 	char **tab;
 	int	size_tab = 0;
-	int	*tab_int = 0;
+	long	*tab_int = 0;
 
 	tab = get_char_tab(++av);
 	int i = 0;
@@ -167,15 +177,15 @@ int	main(int ac, char *av[])
 	tab_int = make_it_int(tab, &size_tab);
 	if (!tab_int)
 	{
-		printf("not atoiable");
+		printf("error making int tab");
 		return (0);
 	}
 	i = 0;
 	while (i < size_tab)
 	{
-		printf("tab_int : %d\n", tab_int[i]);
+		printf("tab_int : %ld\n", tab_int[i]);
 		i++;
 	}
-	printf("isuniq and int %d\n", is_uniq_and_int(tab_int, size_tab));
+	printf("isuniq and int %d\n", is_uniq(tab_int, size_tab));
 	return (0);
 }

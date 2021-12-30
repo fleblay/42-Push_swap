@@ -12,7 +12,7 @@ INCLUDES = -I ./includes
 
 NAME = push_swap
 
-CC = cc
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
