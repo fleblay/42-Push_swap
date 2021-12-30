@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2021/12/30 18:09:36 by fle-blay         ###   ########.fr       */
+/*   Updated: 2021/12/30 18:25:37 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	**get_char_tab(char *av[])
 	char	*ret;
 	char	*tmp;
 	int		i;
+	char	**final_ret;
 
 	ret = ft_strdup("");
 	if (!ret)
@@ -73,7 +74,9 @@ char	**get_char_tab(char *av[])
 		if (!ret)
 			return (NULL);
 	}
-	return (ft_split(ret, ' '));
+	final_ret = ft_split(ret, ' ');
+	free(ret);
+	return (final_ret);
 }
 
 int	is_atoiable(char **tab)
@@ -194,32 +197,12 @@ long	*get_int_tab(char **av, int *size_tab)
 int	main(int ac, char *av[])
 {
 	(void)ac;
-/*	char **tab;
-	int	size_tab = 0;
-	int	error = 0;
-	long	*tab_int = 0;
-
-	tab = get_char_tab(++av);
-	int i = 0;
-	while (tab[i])
-	{
-		printf("ret : %s\n", tab[i]);
-		//free(tab[i]);
-		i++;
-	}
-	//free(tab);
-
-	tab_int = make_it_int(tab, &size_tab, &error);
-	if (!tab_int)
-	{
-		printf("error making int tab");
-		return (0);
-	}*/
 	long *tab_int;
 	int	size_tab;
-	int	i;
 
 	tab_int = get_int_tab(av, &size_tab);
+	/*
+	int	i;
 	i = 0;
 	while (i < size_tab)
 	{
@@ -227,7 +210,9 @@ int	main(int ac, char *av[])
 		i++;
 	}
 	printf("isuniq and int %d\n", is_uniq(tab_int, size_tab));
-	//printf("error : %d\n", error);
+	printf("error : %d\n", error);
 	printf("atoi de + %d\n", atoi("-"));
+	*/
+	free (tab_int);
 	return (0);
 }
