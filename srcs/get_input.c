@@ -6,49 +6,14 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2021/12/30 18:25:37 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/03 12:54:40 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 #include <stdio.h>
-
-static int	ft_isspace(int c)
-{
-	if (c == '\f' || c == '\t' || c == '\n' || c == '\r' || c == '\v' \
-		|| c == ' ')
-		return (1);
-	return (0);
-}
-
-long	ft_atol(const char *nptr, int *error)
-{
-	int		i;
-	long	nbr;
-	int		sign;
-
-	i = 0;
-	sign = 1;
-	nbr = 0;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (! ft_isdigit(nptr[i]))
-	{
-		if (nptr[i] != '-' && nptr[i] != '+')
-			return (nbr);
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (ft_isdigit(nptr[i]))
-	{
-		nbr = 10 * nbr + nptr[i++] - 48;
-		if ((sign == -1 && nbr > 2147483648) || (sign == 1 && nbr > 2147483647))
-			*error = 1;
-	}
-	return (sign * nbr);
-}
+#include "push_swap.h"
 
 char	**get_char_tab(char *av[])
 {
@@ -79,54 +44,6 @@ char	**get_char_tab(char *av[])
 	return (final_ret);
 }
 
-int	is_atoiable(char **tab)
-{
-	int	i;
-	int	j;
-	int	sign;
-
-	i = 0;
-	while (tab[i])
-	{
-		sign = 0;
-		j = 0;
-		if (ft_strlen(tab[i]) == 1 && (tab[i][0] == '-' || tab[i][0] == '+'))
-			return (0);
-		while (tab[i][j])
-		{
-			if (!ft_isdigit(tab[i][j]) && tab[i][j] != '-' && tab[i][j] != '+')
-				return (0);
-			if (tab[i][j] == '-' || tab[i][j] == '+')
-				sign++;
-			j++;
-		}
-		if (sign > 1)
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	is_uniq(long tab[], int size)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (tab[i] == tab[j])
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
 long	*make_it_int(char **tab, int *size_tab, int *error)
 {
 	long	*tab_int;
@@ -152,26 +69,6 @@ long	*make_it_int(char **tab, int *size_tab, int *error)
 	return (tab_int);
 }
 
-void	custom_exit(int error)
-{
-	if (error)
-		ft_putstr_fd("Error\n",2);
-	exit(0);
-}
-
-void	destroy_tab(char **tab)
-{
-	int i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-}
-
 long	*get_int_tab(char **av, int *size_tab)
 {
 	char	**tab;
@@ -193,26 +90,53 @@ long	*get_int_tab(char **av, int *size_tab)
 	return (tab_int);
 }
 
+long	*empty_int_tab(int size_tab)
+{
+	long	*tab_int;
+	int		i;
+
+	i = 0;
+	tab_int = (long *)malloc(size_tab * sizeof(long));
+	if (!tab_int)
+		return (NULL);
+	while (i < size_tab)
+	{
+		tab_int[i] = 0x80000000;
+		i++;
+	}
+	return (tab_int);
+}
+
 #include <stdlib.h>
 int	main(int ac, char *av[])
 {
 	(void)ac;
-	long *tab_int;
-	int	size_tab;
+	t_data data;
+	data.start = NULL;
+	data.s1 = get_int_tab(av, &(data.size));
+	data.s2 = empty_int_tab(data.size);
 
-	tab_int = get_int_tab(av, &size_tab);
-	/*
 	int	i;
 	i = 0;
-	while (i < size_tab)
+	while (i < data.size)
 	{
-		printf("tab_int : %ld\n", tab_int[i]);
+		printf("s1 : %ld s2 : %ld\n", data.s1[i], data.s2[i]);
 		i++;
 	}
-	printf("isuniq and int %d\n", is_uniq(tab_int, size_tab));
-	printf("error : %d\n", error);
-	printf("atoi de + %d\n", atoi("-"));
-	*/
-	free (tab_int);
+	//printf("isuniq and int %d\n", is_uniq(tab_int, size_tab));
+	//printf("error : %d\n", error);
+	//printf("atoi de + %d\n", atoi("-"));
+	printf("\n");
+
+	sa(&data);
+	i = 0;
+	while (i < data.size)
+	{
+		printf("s1 : %ld\n", data.s1[i]);
+		i++;
+	}
+	print_instruct(data.start);
+	//free (tab_int);
+	printf("test : %ld\n", 2147483648);
 	return (0);
 }

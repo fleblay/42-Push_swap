@@ -1,4 +1,4 @@
-SRCS_FILES = get_input.c
+SRCS_FILES = get_input.c instruction_set.c secure_atoi.c destroy_and_exit.c array_test.c
 
 SRCS_DIR = ./srcs/
 
@@ -14,12 +14,13 @@ NAME = push_swap
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
 all : ${NAME}
 
 ${NAME} : ${OBJS} ${HEADER}
 	make -C ./libft
+	make bonus -C ./libft
 	${CC} ${CFLAGS} ${OBJS} -L ./libft -lft -o ${NAME}
 
 %.o : %.c ${HEADER}
