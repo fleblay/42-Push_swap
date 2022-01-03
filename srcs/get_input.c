@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/03 17:03:48 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/03 18:59:41 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ long	*get_int_tab(char **av, int *size_tab)
 		return (NULL);
 	tab_int = make_it_int(tab, size_tab, &error);
 	destroy_tab(tab);
-	if (error || !tab)
+	if (error || !tab_int)
 	{
 		free(tab_int);
-		custom_exit(error);
+		custom_exit(error, NULL);
 	}
 	return (tab_int);
 }
@@ -112,7 +112,6 @@ t_list	*listify(long *tab_int, int size)
 	return (start);
 }
 
-
 #include <stdlib.h>
 int	main(int ac, char *av[])
 {
@@ -120,22 +119,17 @@ int	main(int ac, char *av[])
 	t_data data;
 	data.start = NULL;
 	data.s1 = get_int_tab(av, &(data.size));
-	//free(data.s1);
 	data.l1 = listify(data.s1, data.size);
 	data.l2 = listify(data.s1, 0);
 
 	print_lst(data);
 	printf("\n");
 
-	//printf("isuniq and int %d\n", is_uniq(tab_int, size_tab));
-	//printf("error : %d\n", error);
-	//printf("atoi de + %d\n", atoi("-"));
-
 	sa(&data);
 	print_lst(data);
 	printf("\n");
 
-	pb(&data);
+	pb(&data) && pb(&data) && pb(&data);
 	print_lst(data);
 	printf("\n");
 
@@ -143,7 +137,27 @@ int	main(int ac, char *av[])
 	print_lst(data);
 	printf("\n");
 
+	ra(&data);
+	print_lst(data);
+	printf("\n");
+
+	sb(&data);
+	print_lst(data);
+	printf("\n");
+
+	pa(&data);
+	print_lst(data);
+	printf("\n");
+
+	rrb(&data);
+	print_lst(data);
+	printf("\n");
+
+	rb(&data);
+	print_lst(data);
+	printf("\n");
+
 	print_instruct(data.start);
-	//free (tab_int);
+	custom_exit(0, &data);
 	return (0);
 }

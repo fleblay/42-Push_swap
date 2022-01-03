@@ -1,93 +1,93 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction_set.c                                  :+:      :+:    :+:   */
+/*   instruction_set2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 10:45:54 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/03 18:52:31 by fle-blay         ###   ########.fr       */
+/*   Created: 2022/01/03 18:52:47 by fle-blay          #+#    #+#             */
+/*   Updated: 2022/01/03 19:00:37 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-int	sa(t_data *data)
+int	sb(t_data *data)
 {
 	t_list	*new_instruct;
-	t_list	*oldl1nn;	
-	t_list	*oldl1n;	
+	t_list	*oldl2nn;	
+	t_list	*oldl2n;	
 
-	if (!data->l1 || !data->l1->next)
+	if (!data->l2 || !data->l2->next)
 		return (-1);
-	new_instruct = ft_lstnew(&"sa");
+	new_instruct = ft_lstnew(&"sb");
 	if (!new_instruct)
 		return (0);
-	oldl1n = data->l1->next;
-	oldl1nn = data->l1->next->next;
+	oldl2n = data->l2->next;
+	oldl2nn = data->l2->next->next;
 	ft_lstadd_back(&(data->start), new_instruct);
-	data->l1->next->next = data->l1;
-	data->l1->next = oldl1nn;
-	data->l1 = oldl1n;
+	data->l2->next->next = data->l2;
+	data->l2->next = oldl2nn;
+	data->l2 = oldl2n;
 	return (1);
 }
 
-int	pb(t_data *data)
+int	pa(t_data *data)
 {
-	t_list	*oldl1;
+	t_list	*oldl2;
 	t_list	*new_instruct;
 
-	if (!data->l1)
+	if (!data->l2)
 		return (-1);
-	new_instruct = ft_lstnew(&"pb");
+	new_instruct = ft_lstnew(&"pa");
 	if (!new_instruct)
 		return (0);
 	ft_lstadd_back(&(data->start), new_instruct);
-	oldl1 = data->l1;
-	data->l1 = data->l1->next;
-	ft_lstadd_front(&(data->l2), oldl1);
+	oldl2 = data->l2;
+	data->l2 = data->l2->next;
+	ft_lstadd_front(&(data->l1), oldl2);
 	return (1);
 }
 
-int	ra(t_data *data)
+int	rb(t_data *data)
 {
-	t_list	*oldl1n;
+	t_list	*oldl2n;
 	t_list	*index;
 	t_list	*new_instruct;
 
-	if (!data->l1 || !data->l1->next)
+	if (!data->l2 || !data->l2->next)
 		return (-1);
-	new_instruct = ft_lstnew(&"ra");
+	new_instruct = ft_lstnew(&"rb");
 	if (!new_instruct)
 		return (0);
 	ft_lstadd_back(&(data->start), new_instruct);
-	oldl1n = data->l1->next;
-	index = data->l1;
+	oldl2n = data->l2->next;
+	index = data->l2;
 	while (index->next)
 		index = index->next;
-	index->next = data->l1;
-	data->l1->next = NULL;
-	data->l1 = oldl1n;
+	index->next = data->l2;
+	data->l2->next = NULL;
+	data->l2 = oldl2n;
 	return (1);
 }
 
-int	rra(t_data *data)
+int	rrb(t_data *data)
 {
 	t_list	*index;
 	t_list	*new_instruct;
 
-	if (!data->l1 || !data->l1->next)
+	if (!data->l2 || !data->l2->next)
 		return (-1);
-	new_instruct = ft_lstnew(&"rra");
+	new_instruct = ft_lstnew(&"rrb");
 	if (!new_instruct)
 		return (0);
 	ft_lstadd_back(&(data->start), new_instruct);
-	index = data->l1;
+	index = data->l2;
 	while (index->next->next)
 		index = index->next;
-	index->next->next = data->l1;
-	data->l1 = index->next;
+	index->next->next = data->l2;
+	data->l2 = index->next;
 	index->next = NULL;
 	return (1);
 }
