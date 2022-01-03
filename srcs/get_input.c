@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/03 12:54:40 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/03 17:03:48 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,22 +90,28 @@ long	*get_int_tab(char **av, int *size_tab)
 	return (tab_int);
 }
 
-long	*empty_int_tab(int size_tab)
+t_list	*listify(long *tab_int, int size)
 {
-	long	*tab_int;
+	t_list	*start;
+	t_list	*new_elem;
 	int		i;
 
 	i = 0;
-	tab_int = (long *)malloc(size_tab * sizeof(long));
-	if (!tab_int)
-		return (NULL);
-	while (i < size_tab)
+	start = NULL;
+	while (i < size)
 	{
-		tab_int[i] = 0x80000000;
+		new_elem = ft_lstnew(&(tab_int[i]));
+		if (!new_elem)
+		{
+			ft_lstclear(&start, (void (*)(void *))0);
+			return (NULL);
+		}
+		ft_lstadd_back(&start, new_elem);
 		i++;
 	}
-	return (tab_int);
+	return (start);
 }
+
 
 #include <stdlib.h>
 int	main(int ac, char *av[])
@@ -114,29 +120,30 @@ int	main(int ac, char *av[])
 	t_data data;
 	data.start = NULL;
 	data.s1 = get_int_tab(av, &(data.size));
-	data.s2 = empty_int_tab(data.size);
+	//free(data.s1);
+	data.l1 = listify(data.s1, data.size);
+	data.l2 = listify(data.s1, 0);
 
-	int	i;
-	i = 0;
-	while (i < data.size)
-	{
-		printf("s1 : %ld s2 : %ld\n", data.s1[i], data.s2[i]);
-		i++;
-	}
+	print_lst(data);
+	printf("\n");
+
 	//printf("isuniq and int %d\n", is_uniq(tab_int, size_tab));
 	//printf("error : %d\n", error);
 	//printf("atoi de + %d\n", atoi("-"));
-	printf("\n");
 
 	sa(&data);
-	i = 0;
-	while (i < data.size)
-	{
-		printf("s1 : %ld\n", data.s1[i]);
-		i++;
-	}
+	print_lst(data);
+	printf("\n");
+
+	pb(&data);
+	print_lst(data);
+	printf("\n");
+
+	rra(&data);
+	print_lst(data);
+	printf("\n");
+
 	print_instruct(data.start);
 	//free (tab_int);
-	printf("test : %ld\n", 2147483648);
 	return (0);
 }
