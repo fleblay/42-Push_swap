@@ -38,3 +38,4 @@ fclean : clean
 re : fclean all
 
 .PHONY:  clean fclean re all 
+#To fully check leaks : valgrind --leak-check=full --show-leak-kinds=all
