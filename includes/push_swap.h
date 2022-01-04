@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/04 12:35:21 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/04 15:28:33 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,11 @@ void	print_lst(t_data start);
 int		get_index(t_list *start, int value);
 int		move_top(t_data *data, int value);
 int		mem_move_top(t_data *data, int value, int *n_iter, int (**f_inv)());
+int		swap(t_data *data, int val1, int val2);
+int		get_value(t_list *start, int index);
+int		gnvap(t_data *data, int pivot);
+int		gnvbp(t_data *data, int pivot);
+int		is_p_sorted(t_data *data, int pivot);
+void	p_sort(t_data *data, int pivot);
 
 #endif
