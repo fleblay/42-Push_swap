@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/03 18:59:41 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/04 12:40:31 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,10 +118,11 @@ int	main(int ac, char *av[])
 	(void)ac;
 	t_data data;
 	data.start = NULL;
-	data.s1 = get_int_tab(av, &(data.size));
-	data.l1 = listify(data.s1, data.size);
+	data.s1 = get_int_tab(av, &(data.s1size));
+	data.l1 = listify(data.s1, data.s1size);
 	data.l2 = listify(data.s1, 0);
 
+	update_size(&data);
 	print_lst(data);
 	printf("\n");
 
@@ -157,7 +158,29 @@ int	main(int ac, char *av[])
 	print_lst(data);
 	printf("\n");
 
+	/*
+	move_top(&data, 12);
+	print_lst(data);
+	printf("\n");
+	*/
+
+	int	(*f)(t_data *);
+	int	n;
+	f = NULL;
+	n = 0;
+	mem_move_top(&data, 6, &n, &f);
+	printf("n %d\n", n);
+	if (f == &rra)
+		printf("rra\n");
+	else
+		printf("ra\n");
+	print_lst(data);
+	printf("\n");
+
 	print_instruct(data.start);
+
+	//printf("index : %d\n", get_index(data.l1, 8));
+	//printf("index : %d\n", get_index(data.l1, 12));
 	custom_exit(0, &data);
 	return (0);
 }

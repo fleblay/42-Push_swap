@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:52:47 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/03 19:00:37 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/04 10:52:29 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ int	sb(t_data *data)
 	new_instruct = ft_lstnew(&"sb");
 	if (!new_instruct)
 		return (0);
+	ft_lstadd_back(&(data->start), new_instruct);
 	oldl2n = data->l2->next;
 	oldl2nn = data->l2->next->next;
-	ft_lstadd_back(&(data->start), new_instruct);
 	data->l2->next->next = data->l2;
 	data->l2->next = oldl2nn;
 	data->l2 = oldl2n;
+	update_size(data);
 	return (1);
 }
 
@@ -47,6 +48,7 @@ int	pa(t_data *data)
 	oldl2 = data->l2;
 	data->l2 = data->l2->next;
 	ft_lstadd_front(&(data->l1), oldl2);
+	update_size(data);
 	return (1);
 }
 
@@ -69,6 +71,7 @@ int	rb(t_data *data)
 	index->next = data->l2;
 	data->l2->next = NULL;
 	data->l2 = oldl2n;
+	update_size(data);
 	return (1);
 }
 
@@ -89,5 +92,6 @@ int	rrb(t_data *data)
 	index->next->next = data->l2;
 	data->l2 = index->next;
 	index->next = NULL;
+	update_size(data);
 	return (1);
 }

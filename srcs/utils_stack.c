@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:43:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/03 19:03:25 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/04 10:56:00 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ void	print_instruct(t_list *start)
 	ft_lstiter(start, &printer);
 }
 
+void	print_size(t_data data)
+{
+	ft_putstr_fd("size a : ", 1);
+	ft_putnbr_fd(data.l1size, 1);
+	ft_putstr_fd("\n", 1);
+	ft_putstr_fd("size b : ", 1);
+	ft_putnbr_fd(data.l2size, 1);
+	ft_putstr_fd("\n", 1);
+}
+
 void	print_lst(t_data data)
 {
 	t_list	*i1;
@@ -46,7 +56,7 @@ void	print_lst(t_data data)
 
 	i1 = data.l1;
 	i2 = data.l2;
-	while (data.size-- && (i1 || i2))
+	while (data.s1size-- && (i1 || i2))
 	{
 		if (i1)
 		{
@@ -63,4 +73,31 @@ void	print_lst(t_data data)
 			ft_putstr_fd("\n", 1);
 	}
 	ft_putstr_fd("\n", 1);
+	print_size(data);
+}
+
+int	update_size(t_data *data)
+{
+	t_list	*index;
+	int		i;
+
+	if (!data)
+		return (-1);
+	index = data->l1;
+	i = 0;
+	while (index)
+	{
+		i++;
+		index = index->next;
+	}
+	data->l1size = i;
+	i = 0;
+	index = data->l2;
+	while (index)
+	{
+		i++;
+		index = index->next;
+	}
+	data->l2size = i;
+	return (1);
 }
