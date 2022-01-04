@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/04 15:28:33 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:21:23 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,13 @@ int		move_top(t_data *data, int value);
 int		mem_move_top(t_data *data, int value, int *n_iter, int (**f_inv)());
 int		swap(t_data *data, int val1, int val2);
 int		get_value(t_list *start, int index);
-int		gnvap(t_data *data, int pivot);
-int		gnvbp(t_data *data, int pivot);
-int		is_p_sorted(t_data *data, int pivot);
-void	p_sort(t_data *data, int pivot);
+//int		gnvap(t_data *data, int pivot);
+int	gnvap(t_data *data, int pivot, int start, int size);
+//int		gnvbp(t_data *data, int pivot);
+int	gnvbp(t_data *data, int pivot, int start, int size);
+//int		is_p_sorted(t_data *data, int pivot);
+int		is_p_sorted(t_data *data, int pivot, int start, int size);
+//void	p_sort(t_data *data);
+void	p_sort(t_data *data, int start, int size);
 
 #endif
