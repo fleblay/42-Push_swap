@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/04 18:21:23 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/05 09:41:09 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ int	gnvbp(t_data *data, int pivot, int start, int size);
 int		is_p_sorted(t_data *data, int pivot, int start, int size);
 //void	p_sort(t_data *data);
 void	p_sort(t_data *data, int start, int size);
+void	p_sort2(t_data *data, int begin, int end);
 
 #endif

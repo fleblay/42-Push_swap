@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 10:57:09 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/04 19:17:16 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/05 10:37:46 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,52 @@ void	p_sort(t_data *data, int start, int size)
 	print_lst(*data);
 	index_first_ge = get_index_first_ge(data->l1, middle);
 	printf("index first ge pivot : %d\n", index_first_ge);
-	p_sort(data, 0, size - index_first_ge + 1);
+	//p_sort(data, 0, size - index_first_ge + 1);
 	//p_sort(data, index_first_ge, size);
 }
+
+
+void	p_sort2(t_data *data, int begin, int end)
+{
+	int	pivot;
+	int save_begin;
+	int save_end;
+
+	if (begin >= end)
+		return ;
+	save_begin = begin;
+	save_end = end;
+	pivot = get_value(data->l1, begin + (end - begin) / 2);
+//	printf("pivot : %d\n", pivot);
+	//pivot = 3;
+	while (begin <= end)
+	{
+//		printf("ici\n");
+		while (begin <= end && get_value(data->l1, begin) < pivot)
+		{
+			begin++;
+//			printf("la\n");
+		}
+		while (end >= begin && get_value(data->l1, end) > pivot)
+		{
+			end--;
+//			printf("labas\n");
+		}
+		if (begin <= end)
+		{
+//			printf("tutu\n");
+//			printf("begin : %d end : %d\n", begin, end);
+			if (begin != end)
+				swap(data, get_value(data->l1, begin), get_value(data->l1, end));
+//			printf("toto\n");
+			begin++;
+			end--;
+		}
+	}
+//	print_lst(*data);
+//	printf("begin : %d\n", begin);
+	// quicksort gauche
+	p_sort2(data, save_begin, begin - 1);
+	// quicksort droit
+	p_sort2(data, begin, save_end);
+}	
