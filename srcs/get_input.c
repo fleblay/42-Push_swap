@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/05 10:33:37 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/05 12:29:52 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,13 +122,25 @@ int	main(int ac, char *av[])
 	data.l1 = listify(data.s1, data.s1size);
 	data.l2 = listify(data.s1, 0);
 
+	long	*tab2 = get_int_tab(av, &(data.s1size));
+
+	p_sort_tab(&data, tab2, 0, data.s1size - 1);
+	int i = 0;
+	while (i < data.s1size)
+	{
+		printf("tab2[%d] : %ld\n", i, tab2[i]);
+		i++;
+	}
+
 	update_size(&data);
 //	print_lst(data);
 //	printf("\n");
+//
 
-	p_sort2(&data, 0, data.l1size - 1);
-//	print_lst(data);
-//	printf("\n");
+
+//	p_sort2(&data, 0, data.l1size - 1);
+	print_lst(data);
+	printf("\n");
 
 	/*
 	swap(&data, 2, 6);
@@ -136,7 +148,7 @@ int	main(int ac, char *av[])
 	printf("\n");
 	*/
 
-	print_lst(data);
+//	print_lst(data);
 	print_instruct(data.start);
 
 	//printf("index : %d\n", get_index(data.l1, 8));

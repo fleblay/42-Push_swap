@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 10:57:09 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/05 10:37:46 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/05 13:03:09 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,6 @@ int	gnvbp(t_data *data, int pivot, int start, int size)
 	return (pivot);
 }
 
-//int get_mediane
-
 #include <stdio.h>
 
 void	p_sort(t_data *data, int start, int size)
@@ -139,36 +137,58 @@ void	p_sort2(t_data *data, int begin, int end)
 	save_begin = begin;
 	save_end = end;
 	pivot = get_value(data->l1, begin + (end - begin) / 2);
-//	printf("pivot : %d\n", pivot);
-	//pivot = 3;
 	while (begin <= end)
 	{
-//		printf("ici\n");
 		while (begin <= end && get_value(data->l1, begin) < pivot)
-		{
 			begin++;
-//			printf("la\n");
-		}
 		while (end >= begin && get_value(data->l1, end) > pivot)
-		{
 			end--;
-//			printf("labas\n");
-		}
 		if (begin <= end)
 		{
-//			printf("tutu\n");
-//			printf("begin : %d end : %d\n", begin, end);
-			if (begin != end)
-				swap(data, get_value(data->l1, begin), get_value(data->l1, end));
-//			printf("toto\n");
+			swap(data, get_value(data->l1, begin), get_value(data->l1, end));
 			begin++;
 			end--;
 		}
 	}
-//	print_lst(*data);
-//	printf("begin : %d\n", begin);
-	// quicksort gauche
 	p_sort2(data, save_begin, begin - 1);
-	// quicksort droit
 	p_sort2(data, begin, save_end);
 }	
+
+void	p_sort_tab(t_data *data, long *tab, int begin, int end)
+{
+	int	pivot;
+	int save_begin;
+	int save_end;
+	long	tmp;
+
+	if (begin >= end)
+		return ;
+	save_begin = begin;
+	save_end = end;
+	pivot = tab[begin + (end - begin) / 2];
+	while (begin <= end)
+	{
+		while (begin <= end && tab[begin] < pivot)
+			begin++;
+		while (end >= begin && tab[end] > pivot)
+			end--;
+		if (begin <= end)
+		{
+			if (begin != end)
+			{
+				swap2(data,	tab[begin], tab[end]);
+				tmp = tab[begin];
+				tab[begin] = tab[end];
+				tab[end] = tmp;
+			}
+			begin++;
+			end--;
+		}
+	}
+	p_sort_tab(data, tab, save_begin, begin - 1);
+	p_sort_tab(data, tab, begin, save_end);
+}
+
+int	get_mediane(t_data *data, long *tab, int begin, int end)
+{
+
