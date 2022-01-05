@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/05 12:29:52 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/05 18:42:03 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,14 +123,17 @@ int	main(int ac, char *av[])
 	data.l2 = listify(data.s1, 0);
 
 	long	*tab2 = get_int_tab(av, &(data.s1size));
+	//printf("val mediane : %d\n", get_mediane(data.s1, 0, data.s1size -1));
 
-	p_sort_tab(&data, tab2, 0, data.s1size - 1);
+	p_sort_tab2(&data, tab2, 0, data.s1size - 1);
+	/*
 	int i = 0;
 	while (i < data.s1size)
 	{
 		printf("tab2[%d] : %ld\n", i, tab2[i]);
 		i++;
 	}
+	*/
 
 	update_size(&data);
 //	print_lst(data);
@@ -149,7 +152,7 @@ int	main(int ac, char *av[])
 	*/
 
 //	print_lst(data);
-	print_instruct(data.start);
+//	print_instruct(data.start);
 
 	//printf("index : %d\n", get_index(data.l1, 8));
 	//printf("index : %d\n", get_index(data.l1, 12));

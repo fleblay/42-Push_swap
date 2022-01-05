@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 10:57:09 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/05 13:03:09 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/05 19:17:25 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	gnvbp(t_data *data, int pivot, int start, int size)
 
 #include <stdio.h>
 
+//not working
 void	p_sort(t_data *data, int start, int size)
 {
 	int	middle;
@@ -125,7 +126,7 @@ void	p_sort(t_data *data, int start, int size)
 	//p_sort(data, index_first_ge, size);
 }
 
-
+//working but swap not opti
 void	p_sort2(t_data *data, int begin, int end)
 {
 	int	pivot;
@@ -134,10 +135,13 @@ void	p_sort2(t_data *data, int begin, int end)
 
 	if (begin >= end)
 		return ;
+	if (is_sorted(data->l2))
+		return ;
 	save_begin = begin;
 	save_end = end;
+	printf("ici1\n");
 	pivot = get_value(data->l1, begin + (end - begin) / 2);
-	while (begin <= end)
+	while (begin <= end /*&& !is_sorted(data->l1)*/)
 	{
 		while (begin <= end && get_value(data->l1, begin) < pivot)
 			begin++;
@@ -145,15 +149,54 @@ void	p_sort2(t_data *data, int begin, int end)
 			end--;
 		if (begin <= end)
 		{
+			printf("swapa\n");
 			swap(data, get_value(data->l1, begin), get_value(data->l1, end));
 			begin++;
 			end--;
 		}
 	}
+	print_lst(*data);
 	p_sort2(data, save_begin, begin - 1);
 	p_sort2(data, begin, save_end);
 }	
 
+//idem p_sort2 pour la stack b (pour le swap);
+//attention : inversion des < et > pour les while pour avoir ordre invers avant de repousser)
+void	p_sort2b(t_data *data, int begin, int end)
+{
+	int	pivot;
+	int save_begin;
+	int save_end;
+
+	if (begin >= end)
+		return ;
+	if (is_sorted(data->l2))
+		return ;
+	save_begin = begin;
+	save_end = end;
+	printf("ici2\n");
+	pivot = get_value(data->l2, begin + (end - begin) / 2);
+	while (begin <= end && !is_rsorted(data->l2))
+	{
+		while (begin <= end && printf("begin : %d\n", begin) && get_value(data->l2, begin) > pivot)
+			begin++;
+		while (end >= begin && printf("end : %d\n", end) && get_value(data->l2, end) < pivot)
+			end--;
+		if (begin <= end)
+		{
+			printf("swapb\n");
+			swapb(data, get_value(data->l2, begin), get_value(data->l2, end));
+			begin++;
+			end--;
+		}
+	}
+	print_lst(*data);
+	p_sort2b(data, save_begin, begin - 1);
+	p_sort2b(data, begin, save_end);
+}	
+
+//idem p_sort2 mas avec tableau pour pouvoir utiliser swap2 qui n'a pas besoin
+//de liste ordonee
 void	p_sort_tab(t_data *data, long *tab, int begin, int end)
 {
 	int	pivot;
@@ -165,7 +208,8 @@ void	p_sort_tab(t_data *data, long *tab, int begin, int end)
 		return ;
 	save_begin = begin;
 	save_end = end;
-	pivot = tab[begin + (end - begin) / 2];
+	//pivot = tab[begin + (end - begin) / 2];
+	pivot = get_mediane(tab, begin, end);
 	while (begin <= end)
 	{
 		while (begin <= end && tab[begin] < pivot)
@@ -185,10 +229,119 @@ void	p_sort_tab(t_data *data, long *tab, int begin, int end)
 			end--;
 		}
 	}
+	print_lst(*data);
 	p_sort_tab(data, tab, save_begin, begin - 1);
 	p_sort_tab(data, tab, begin, save_end);
 }
 
-int	get_mediane(t_data *data, long *tab, int begin, int end)
-{
+//try avec 2 stacks
 
+void	p_sort_tab2(t_data *data, long *tab, int begin, int end)
+{
+	int	pivot;
+	int save_begin;
+	int save_end;
+	long	tmp;
+
+	if (begin >= end)
+		return ;
+	if (is_sorted(data->l1))
+		return ;
+	save_begin = begin;
+	save_end = end;
+	//pivot = tab[begin + (end - begin) / 2];
+	pivot = get_mediane(tab, begin, end);
+	printf("pivot value : %d\n", pivot);
+	while (begin <= end && !is_sorted(data->l1))
+	{
+		while (begin <= end && tab[begin] < pivot)
+			begin++;
+		while (end >= begin && tab[end] > pivot)
+			end--;
+		if (begin <= end)
+		{
+			if (begin != end)
+			{
+				//to improve avec move_top ensuite
+				printf("swap algo tab\n");
+				swap(data, tab[begin], tab[end]);
+				tmp = tab[begin];
+				tab[begin] = tab[end];
+				tab[end] = tmp;
+			}
+			begin++;
+			end--;
+		}
+	}
+	// move_top(data, tab[begin]); jusqu'a etre pivot sorted, inf au debut
+	print_lst(*data);
+	printf("begin : %ld\n", tab[begin]);
+	move_top_to_other(data, begin, pb);
+	print_lst(*data);
+	p_sort2(data, 0, data->l1size - 1);
+	p_sort2b(data, 0, data->l2size - 1);
+	move_top_to_other(data, begin, pa);
+}
+int	get_mediane(long *tab, int begin, int end)
+{
+	int	i;
+	int	*tmp_tab;
+	int tmp;
+
+	if (begin >=end)
+		return (-1);
+	tmp_tab = (int *)malloc((end - begin + 1) * sizeof(int));
+	if (!tmp_tab)
+		return (-1);
+	i = -1;
+	while ((++i) < end - begin + 1)
+		tmp_tab[i] = tab[i + begin];
+	i = 0;
+	while (i < end - begin)
+	{
+		if (tmp_tab[i] > tmp_tab[i + 1])
+		{
+			tmp = tmp_tab[i];
+			tmp_tab[i] = tmp_tab[i + 1];
+			tmp_tab[i + 1] = tmp;
+			i = 0;
+		}
+		else 
+			i++;
+	}
+	return (tmp_tab[(end - begin) / 2]);
+}
+
+// int is_loop_sorted(t_list *lst);
+
+int	is_sorted(t_list *lst)
+{
+	int curr_value;
+	int ncurr_value;
+
+	while (lst && lst->next)
+	{
+		curr_value = *((int *)(lst->content));
+		ncurr_value = *((int *)(lst->next->content));
+		if (curr_value > ncurr_value)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
+
+int	is_rsorted(t_list *lst)
+{
+	int curr_value;
+	int ncurr_value;
+
+	while (lst && lst->next)
+	{
+		curr_value = *((int *)(lst->content));
+		ncurr_value = *((int *)(lst->next->content));
+		if (curr_value < ncurr_value)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}

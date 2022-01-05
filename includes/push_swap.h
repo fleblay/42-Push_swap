@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/05 12:02:57 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/05 19:14:32 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,15 @@ int		is_p_sorted(t_data *data, int pivot, int start, int size);
 //void	p_sort(t_data *data);
 void	p_sort(t_data *data, int start, int size);
 void	p_sort2(t_data *data, int begin, int end);
+void	p_sort2b(t_data *data, int begin, int end);
 void	p_sort_tab(t_data *data, long *tab, int begin, int end);
+void	p_sort_tab2(t_data *data, long *tab, int begin, int end);
 int		swap2(t_data *data, int val1, int val2);
+int		get_mediane(long *tab, int begin, int end);
+int		move_top_to_other(t_data *data, int index, int (*f)());
+int	move_topb(t_data *data, int value);
+int	swapb(t_data *data, int val1, int val2);
+int	is_sorted(t_list *lst);
+int	is_rsorted(t_list *lst);
 
 #endif
