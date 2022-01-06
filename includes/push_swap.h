@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/05 19:14:32 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 11:06:16 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,9 @@ int		move_top(t_data *data, int value);
 int		mem_move_top(t_data *data, int value, int *n_iter, int (**f_inv)());
 int		swap(t_data *data, int val1, int val2);
 int		get_value(t_list *start, int index);
-//int		gnvap(t_data *data, int pivot);
-int	gnvap(t_data *data, int pivot, int start, int size);
-//int		gnvbp(t_data *data, int pivot);
-int	gnvbp(t_data *data, int pivot, int start, int size);
-//int		is_p_sorted(t_data *data, int pivot);
+int		gnvap(t_data *data, int pivot, int start, int size);
+int		gnvbp(t_data *data, int pivot, int start, int size);
 int		is_p_sorted(t_data *data, int pivot, int start, int size);
-//void	p_sort(t_data *data);
-void	p_sort(t_data *data, int start, int size);
 void	p_sort2(t_data *data, int begin, int end);
 void	p_sort2b(t_data *data, int begin, int end);
 void	p_sort_tab(t_data *data, long *tab, int begin, int end);
@@ -70,9 +65,15 @@ void	p_sort_tab2(t_data *data, long *tab, int begin, int end);
 int		swap2(t_data *data, int val1, int val2);
 int		get_mediane(long *tab, int begin, int end);
 int		move_top_to_other(t_data *data, int index, int (*f)());
-int	move_topb(t_data *data, int value);
-int	swapb(t_data *data, int val1, int val2);
-int	is_sorted(t_list *lst);
-int	is_rsorted(t_list *lst);
+int		move_topb(t_data *data, int value);
+int		swapb(t_data *data, int val1, int val2);
+int		is_sorted(t_list *lst);
+int		is_rsorted(t_list *lst);
+int		move_topb(t_data *data, int value);
+int		mem_move_topb(t_data *data, int value, int *n_iter, int (**f_inv)());
+t_list	*listify(long *tab_int, int size);
+int		get_index_first_ge(t_list *start, int value);
+int		get_index(t_list *start, int value);
+void	custom_swap(int *a, int *b, int *index);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/05 18:42:03 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 09:36:52 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,59 +110,4 @@ t_list	*listify(long *tab_int, int size)
 		i++;
 	}
 	return (start);
-}
-
-#include <stdlib.h>
-int	main(int ac, char *av[])
-{
-	(void)ac;
-	t_data data;
-	data.start = NULL;
-	data.s1 = get_int_tab(av, &(data.s1size));
-	data.l1 = listify(data.s1, data.s1size);
-	data.l2 = listify(data.s1, 0);
-
-	long	*tab2 = get_int_tab(av, &(data.s1size));
-	//printf("val mediane : %d\n", get_mediane(data.s1, 0, data.s1size -1));
-
-	p_sort_tab2(&data, tab2, 0, data.s1size - 1);
-	/*
-	int i = 0;
-	while (i < data.s1size)
-	{
-		printf("tab2[%d] : %ld\n", i, tab2[i]);
-		i++;
-	}
-	*/
-
-	update_size(&data);
-//	print_lst(data);
-//	printf("\n");
-//
-
-
-//	p_sort2(&data, 0, data.l1size - 1);
-	print_lst(data);
-	printf("\n");
-
-	/*
-	swap(&data, 2, 6);
-	print_lst(data);
-	printf("\n");
-	*/
-
-//	print_lst(data);
-//	print_instruct(data.start);
-
-	//printf("index : %d\n", get_index(data.l1, 8));
-	//printf("index : %d\n", get_index(data.l1, 12));
-	
-	/*
-	printf("4 eme value : %d\n", get_value(data.l1, 4));
-	printf("next above 5 : %d\n", gnvap(&data, 5));
-	printf("next below 5 : %d\n", gnvbp(&data, 5));
-	printf("is_p_sorted : %d\n", is_p_sorted(&data, 5));
-	*/
-	custom_exit(0, &data);
-	return (0);
 }

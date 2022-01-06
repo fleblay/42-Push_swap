@@ -1,5 +1,6 @@
 SRCS_FILES = get_input.c instruction_set.c secure_atoi.c destroy_and_exit.c array_test.c\
-			 utils_stack.c instruction_set2.c instruction_set3.c utils_stack2.c custom_is.c
+			 utils_stack.c instruction_set2.c instruction_set3.c utils_sort.c custom_is.c\
+			 custom_is2.c push_swap.c utils_sort2.c algo_qsort.c
 
 SRCS_DIR = ./srcs/
 
