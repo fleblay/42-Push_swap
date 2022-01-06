@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:43:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/04 10:56:00 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 15:14:18 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void	printer(void *content)
 		ft_putstr_fd("rrb", 1);
 	if (!(ft_strncmp(content, "rb", 5)))
 		ft_putstr_fd("rb", 1);
+	if (!(ft_strncmp(content, "ss", 5)))
+		ft_putstr_fd("ss", 1);
+	if (!(ft_strncmp(content, "rr", 5)))
+		ft_putstr_fd("rr", 1);
+	if (!(ft_strncmp(content, "rrr", 5)))
+		ft_putstr_fd("rrr", 1);
 	ft_putstr_fd("\n", 1);
 }
 
