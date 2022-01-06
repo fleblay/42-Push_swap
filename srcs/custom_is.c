@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 11:15:19 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 10:00:42 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 12:56:25 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,8 @@ int	mem_move_top(t_data *data, int value, int *n_iter, int (**f_inv)())
 
 	n = 0;
 	pos_of_value = get_index(data->l1, value);
-	//printf("pos_of_value : %d\n", pos_of_value);
-	//printf("data->l1size / 2: %d\n", data->l1size/2);
 	if (pos_of_value <= (data->l1size / 2))
 	{
-		//printf("go ra\n");
 		*f_inv = &rra;
 		while (get_index(data->l1, value))
 		{
@@ -67,7 +64,6 @@ int	mem_move_top(t_data *data, int value, int *n_iter, int (**f_inv)())
 	}
 	else
 	{
-		//printf("go rra\n");
 		*f_inv = &ra;
 		while (get_index(data->l1, value))
 		{
@@ -86,11 +82,8 @@ int	mem_move_topb(t_data *data, int value, int *n_iter, int (**f_inv)())
 
 	n = 0;
 	pos_of_value = get_index(data->l2, value);
-	//printf("pos_of_value : %d\n", pos_of_value);
-	//printf("data->l1size / 2: %d\n", data->l1size/2);
 	if (pos_of_value <= (data->l2size / 2))
 	{
-		//printf("go ra\n");
 		*f_inv = &rrb;
 		while (get_index(data->l2, value))
 		{
@@ -100,7 +93,6 @@ int	mem_move_topb(t_data *data, int value, int *n_iter, int (**f_inv)())
 	}
 	else
 	{
-		//printf("go rra\n");
 		*f_inv = &rb;
 		while (get_index(data->l2, value))
 		{
@@ -125,7 +117,7 @@ int	swap(t_data *data, int val1, int val2)
 		return (0);
 	if (get_index(data->l1, val1) < 0 || get_index(data->l1, val2) < 0)
 		return (-1);
-	printf("making swap a\n");
+//	printf("making swap a\n");
 	update_size(data);
 	mem_move_top(data, val1, &n1, &f1);
 	pb(data);

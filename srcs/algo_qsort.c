@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:44:09 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 11:00:24 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 11:25:19 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 void	p_sort2(t_data *data, int begin, int end)
 {
 	int	pivot;
-	int save_begin;
-	int save_end;
+	int	save_begin;
+	int	save_end;
 
 	if (begin >= end || is_sorted(data->l1))
 		return ;
@@ -46,12 +46,13 @@ void	p_sort2(t_data *data, int begin, int end)
 //idem p_sort2 pour la stack b
 //changement du swap notamment
 //Utile uniquement pour la version a 2 stacks
-//attention : inversion des < et > pour les while pour avoir ordre invers avant de repousser)
+//Inversion des < et > pour les while pour
+//ordre invers avant de repousser)
 void	p_sort2b(t_data *data, int begin, int end)
 {
 	int	pivot;
-	int save_begin;
-	int save_end;
+	int	save_begin;
+	int	save_end;
 
 	if (begin >= end || is_sorted(data->l2))
 		return ;
@@ -79,9 +80,9 @@ void	p_sort2b(t_data *data, int begin, int end)
 //de liste ordonee
 void	p_sort_tab(t_data *data, long *tab, int begin, int end)
 {
-	int	pivot;
-	int save_begin;
-	int save_end;
+	int		pivot;
+	int		save_begin;
+	int		save_end;
 	long	tmp;
 
 	if (begin >= end)
@@ -99,7 +100,7 @@ void	p_sort_tab(t_data *data, long *tab, int begin, int end)
 		{
 			if (begin != end)
 			{
-				swap2(data,	tab[begin], tab[end]);
+				swap2(data, tab[begin], tab[end]);
 				tmp = tab[begin];
 				tab[begin] = tab[end];
 				tab[end] = tmp;
@@ -116,9 +117,9 @@ void	p_sort_tab(t_data *data, long *tab, int begin, int end)
 
 void	p_sort_tab2(t_data *data, long *tab, int begin, int end)
 {
-	int	pivot;
-	int save_begin;
-	int save_end;
+	int		pivot;
+	int		save_begin;
+	int		save_end;
 	long	tmp;
 
 	if (begin >= end)

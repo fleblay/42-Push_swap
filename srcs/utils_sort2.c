@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:42:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 11:02:00 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 11:29:55 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	is_sorted(t_list *lst)
 {
-	int curr_value;
-	int ncurr_value;
+	int	curr_value;
+	int	ncurr_value;
 
 	while (lst && lst->next)
 	{
@@ -31,8 +31,8 @@ int	is_sorted(t_list *lst)
 
 int	is_rsorted(t_list *lst)
 {
-	int curr_value;
-	int ncurr_value;
+	int	curr_value;
+	int	ncurr_value;
 
 	while (lst && lst->next)
 	{

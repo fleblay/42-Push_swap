@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 11:06:16 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 12:30:50 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ t_list	*listify(long *tab_int, int size);
 int		get_index_first_ge(t_list *start, int value);
 int		get_index(t_list *start, int value);
 void	custom_swap(int *a, int *b, int *index);
+int		get_mediane_stack(t_list *start, int stack_size);
+void	sort_3a(t_data *data);
 
 #endif

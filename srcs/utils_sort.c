@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:41:30 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 11:10:13 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 11:29:27 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	get_value(t_list *start, int index)
 
 void	custom_swap(int *a, int *b, int *index)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *a;
 	*a = *b;
@@ -64,9 +64,9 @@ int	get_mediane(long *tab, int begin, int end)
 {
 	int	i;
 	int	*tmp_tab;
-	int med;
+	int	med;
 
-	if (begin >=end)
+	if (begin >= end)
 		return (-1);
 	tmp_tab = (int *)malloc((end - begin + 1) * sizeof(int));
 	if (!tmp_tab)
@@ -79,12 +79,11 @@ int	get_mediane(long *tab, int begin, int end)
 	{
 		if (tmp_tab[i] > tmp_tab[i + 1])
 			custom_swap(&(tmp_tab[i]), &(tmp_tab[i + 1]), &i);
-		else 
+		else
 			i++;
 	}
 	med = tmp_tab[(end - begin) / 2];
 	free(tmp_tab);
 	return (med);
 }
-
 // int is_loop_sorted(t_list *lst);
