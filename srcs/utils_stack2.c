@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 14:40:09 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 17:16:39 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 19:39:42 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,20 @@ int	checker(t_list *instruct, long *input, int input_size)
 	return (res);
 }
 
+//on a rajoute la taille de la stack fixe
 int checker_array(char **tab, long *input, int input_size)
 {
 	t_data	test_data;
 	int		res;
 	int		i;
+	int		l1sizeinit;
 
 	test_data.start = NULL;
 	test_data.s1 = input;
 	test_data.l1 = listify(input, input_size);
 	test_data.l2 = listify(input, 0);
 	update_size(&test_data);
+	l1sizeinit = test_data.l1size;
 
 	i = 0;
 	while (tab[i])
@@ -85,40 +88,123 @@ int checker_array(char **tab, long *input, int input_size)
 	ft_lstclear(&(test_data.l1), (void (*)(void *))0);
 	ft_lstclear(&(test_data.l2), (void (*)(void *))0);
 	ft_lstclear(&(test_data.start), (void (*)(void *))0);
+	if (test_data.l1size != l1sizeinit)
+		res = 0;
 	return (res);
 }
-	
+
+
+//Appeler plusieurs fois avec des valeurs incrementales
+// 7 uniquement pour des petit sets (5 par exemple)	
+// sinon mettre 5 max pour etre instant
 void	sort_bf(t_data *data, char **sol, int depth)
 {
-	char	*tab[11] = {"sa", "pb", "rra", "ra", "sb", "pa", "rrb", "rb", "ss", "rr", "rrr"};
+	//On essaie de limiter les operations dispo
+	//char	*tab[11] = {"sa", "pb", "rra", "ra", "sb", "pa", "rrb", "rb", "ss", "rr", "rrr"};
+	//char	*tab[11] = {"sa", "pb", "rra", "ra", "sb", "pa", "rrb", "rb"};
+	char	*tab[11] = {"sa", "pb", "rra", "ra", "sb", "pa"};
 	int		i;
+	int j = 0;
 
 	i = 0;
-	while (i < 11 && depth < 2)
+	if (checker_array(sol, data->s1, data->s1size))
+		{
+			printf("IS OK\n");
+			j = 0;
+			while (j < 7)
+			{
+				printf("sol[%d] : %s\n", j, sol[j]);
+				j++;
+			}
+			return ;
+		}
+	while (i < 11 && depth < 7)
 	{
 		sol[depth] = tab[i];
+		/*
 		int j = 0;
+		
 		while (j < 4)
 		{
 			printf("sol[%d] : %s\n", j, sol[j]);
 			j++;
 		}
+		*/
+		// Obvious check a eviter
+		// ie 2 sa colles ou 2 sb colles
+		if ((sol[0] == tab[0] && sol[1] == tab[0])
+			|| (sol[0] == tab[4] && sol[1] == tab[4])
+)
+			return ;
+		//ajouter check stack est bien taille de l'initiale
 		if (checker_array(sol, data->s1, data->s1size))
 		{
 			printf("IS OK\n");
+			j = 0;
+			while (j < 7)
+			{
+				printf("sol[%d] : %s\n", j, sol[j]);
+				j++;
+			}
 			return ;
 		}
-		printf("i : %d we go deeper : %d\n", i,  depth);
+		//printf("i : %d we go deeper : %d\n", i,  depth);
 		sort_bf(data, sol, depth + 1);
+		//Pour trouver toutes les solutions
+		/*
+		if (!checker_array(sol, data->s1, data->s1size))
+		{
+			sol[depth] = 0;
+		}
+		i++;
+		*/
+		//Pour trouver une seule solution
 		if (!checker_array(sol, data->s1, data->s1size))
 		{
 			sol[depth] = 0;
 			i++;
 		}
-		//i++;
 		else
 			return ;
 	}
-	printf("return.i : %d deeper : %d\n", i,  depth);
+	//printf("return.i : %d deeper : %d\n", i,  depth);
 	return ;
 }
+
+//void	sort_bf(t_data *data, char **sol, int depth)
+//{
+//	char	*tab[11] = {"sa", "pb", "rra", "ra", "sb", "pa", "rrb", "rb", "ss", "rr", "rrr"};
+//	int		i;
+//
+//	i = 0;
+//	while (i < 11 && depth < 20)
+//	{
+//		sol[depth] = tab[i];
+//		/*
+//		int j = 0;
+//		while (j < 4)
+//		{
+//			printf("sol[%d] : %s\n", j, sol[j]);
+//			j++;
+//		}
+//		*/
+//		if (checker_array(sol, data->s1, data->s1size))
+//		{
+//		//	printf("IS OK\n");
+//			return ;
+//		}
+//		//printf("i : %d we go deeper : %d\n", i,  depth);
+//		sort_bf(data, sol, depth + 1);
+//		if (!checker_array(sol, data->s1, data->s1size))
+//		{
+//			sol[depth] = 0;
+//			i++;
+//		}
+//		//i++;
+//		else
+//			return ;
+//	}
+//	//printf("return.i : %d deeper : %d\n", i,  depth);
+//	return ;
+//}
+//

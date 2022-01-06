@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 17:06:46 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/06 18:48:48 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,14 @@ int	main(int ac, char *av[])
 	//printf("res checker : %d\n", checker(data.start, data.s1, data.s1size));
 	char	*solution[] = {"sa", NULL};
 	printf("res checker_array : %d\n", checker_array(solution, data.s1, data.s1size));
-
+	/*
+	int i = 0;
+	while (sol[i])
+	{
+		printf("sol[%d] : %s\n", i, sol[i]);
+		i++;
+	}
+	*/
 	custom_exit(0, &data);
 	return (0);
 }
