@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:49:23 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 12:31:31 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/07 15:33:35 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,28 @@ void	sort_3a(t_data *data)
 		sa(data) &&  rra(data);
 	if (tab[0] > tab[1] && tab[1] < tab[2] && tab[2] > tab[0])
 		sa(data);
+}
+
+void	sort_3b(t_data *data)
+{
+	int tab[3];
+	int	i;
+
+	if (data->l2size != 3)
+		return ;
+	i = -1;
+	while (++i < 3)
+		tab[i] = get_value(data->l2, i);
+	if (tab[0] < tab[1] && tab[1] < tab[2] && tab[2] > tab[0])
+		rrb(data) && rrb(data);
+	if (tab[0] < tab[1] && tab[1] > tab[2] && tab[2] < tab[0])
+		sb(data);
+	if (tab[0] > tab[1] && tab[1] < tab[2] && tab[2] < tab[0])
+		sb(data) && rb(data);
+	if (tab[0] < tab[1] && tab[1] > tab[2] && tab[2] > tab[0])
+		rb(data);
+	if (tab[0] > tab[1] && tab[1] > tab[2] && tab[2] < tab[0])
+		return ;
+	if (tab[0] > tab[1] && tab[1] < tab[2] && tab[2] > tab[0])
+		rrb(data);
 }

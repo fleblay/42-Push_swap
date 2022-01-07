@@ -6,12 +6,15 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:43:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 15:14:18 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:51:19 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+#include <stdio.h>
+
+static int count = 0;
 
 void	printer(void *content)
 {
@@ -38,11 +41,13 @@ void	printer(void *content)
 	if (!(ft_strncmp(content, "rrr", 5)))
 		ft_putstr_fd("rrr", 1);
 	ft_putstr_fd("\n", 1);
+	count++;
 }
 
 void	print_instruct(t_list *start)
 {
 	ft_lstiter(start, &printer);
+	printf("nb ope : %d\n", count);
 }
 
 void	print_size(t_data data)

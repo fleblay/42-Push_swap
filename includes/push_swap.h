@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/07 12:47:17 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/07 17:07:21 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 typedef	struct s_data {
 	long	*s1;
+	int		*sorted_s1;
 	int		s1size;
 	t_list	*l1;
 	int		l1size;
@@ -86,5 +87,8 @@ void	opti_sort(t_data *data);
 int		get_index_first_le(t_list *start, int value);
 int		get_index_first_g(t_list *start, int value);
 int		get_index_first_l(t_list *start, int value);
+void	sort_3b(t_data *data);
+int		*get_sorted_array(long *tab, int begin, int end);
+int	spot_misfits(t_list *lst);
 
 #endif

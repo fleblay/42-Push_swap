@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:53:39 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/03 20:15:06 by fred             ###   ########.fr       */
+/*   Updated: 2022/01/07 16:28:21 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	custom_exit(int error, t_data *data)
 		ft_lstclear(&(data->l2), (void (*)(void *))0);
 		ft_lstclear(&(data->start), (void (*)(void *))0);
 		free(data->s1);
+		free(data->sorted_s1);
 	}
 	exit(0);
 }

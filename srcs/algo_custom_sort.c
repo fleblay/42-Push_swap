@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:40:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/07 13:13:22 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/07 17:17:46 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ void	opti_sort(t_data *data)
 	int	i;
 	int j;
 
+	//printf("nb misfit : %d\n", spot_misfits(data->l1));
 	j = 0;
-	while (data->l1size > 3)
+	while (data->l1size > 3 && pivot >= 0)
 	{
 		pivot = get_mediane_stack(data->l1, data->l1size);
-		printf("pivot : %d\n", pivot);
+//		printf("pivot : %d\n", pivot);
 		old_l1size = data->l1size;
 		i = 0;
 		while (i < old_l1size && get_index_first_l(data->l1, pivot) != -1)
@@ -46,54 +47,52 @@ void	opti_sort(t_data *data)
 	//print_lst(*data);
 
 	j--;
-	printf("doing b\n");
+//	printf("doing b\n");
 	while (data->l2size > 3)
 	{
 		if (j >= 0)
 			pivot = save_pivot[j];
 		else
+		{
 			pivot = get_mediane_stack(data->l2, data->l2size);
-		printf("pivot : %d\n", pivot);
+		}	
+//		printf("pivot : %d\n", pivot);
 		old_l2size = data->l2size;
+		//if (pivot <= 4)
+		//	break ;
 		i = 0;
 		while (i < old_l2size && get_index_first_g(data->l2, pivot) != -1)
 		{
-			printf("Doing something. value : %d, pivot : %d", *(int *)(data->l2->content), pivot);
-			//if (*(int *)(data->l2->content) > pivot)
+//			printf("Doing something. value : %d, pivot : %d", *(int *)(data->l2->content), pivot);
 			if (*(int *)(data->l2->content) >= pivot)
 			{
-				printf(" : PA\n");
+//				printf(" : PA\n");
 				pa(data);
+				if (*(int *)(data->l1->content) == pivot)
+				{
+//					printf("THIS IS THE PIVOT\n");
+					ra(data);
+				}
 			}
-			/*
-			else if (*(int *)(data->l2->content) == pivot)
-			{
-				printf("THIS IS THE PIVOT\n");
-				pa(data);
-				ra(data);
-			}
-			*/
 			else
 			{
-				printf(" : RB\n");
+//				printf(" : RB\n");
 				rb(data);
 			}
 			i++;
-			/*if (get_index_first_g(data->l2, pivot) == -1)
+			if (get_index_first_ge(data->l2, pivot) == -1)
 			{
-				printf(" : RRA for pivot\n");
+//				printf(" : RRA for pivot\n");
 				rra(data);
 			}
-			*/
 		}
 
 		j--;
 	}
-	//fonction pour tri 3b
-	
+	sort_3b(data);
 	while (data->l2size)
 		pa(data);
 	print_lst(*data);
+	printf("nb misfit : %d\n", spot_misfits(data->l1));
 	
 }
-	
