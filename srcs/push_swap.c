@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 18:48:48 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/07 09:41:23 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,15 @@ int	main(int ac, char *av[])
 	printf("\n");
 //	print_lst(data);
 
-	char	*sol[20] = {0};
-	sort_bf(&data, sol, 0);
+	char	*sol[10] = {0};
+	int max_depth = 1;
+	while (max_depth < 8)
+	{
+		if (sort_bf(&data, sol, 0, max_depth))
+			break ;
+		printf("No solution for max_depth : %d\n", max_depth);
+		max_depth++;
+	}
 	print_instruct(data.start);
 
 	//printf("res checker : %d\n", checker(data.start, data.s1, data.s1size));

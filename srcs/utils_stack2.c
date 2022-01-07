@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 14:40:09 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 19:39:42 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/07 09:40:44 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int checker_array(char **tab, long *input, int input_size)
 //Appeler plusieurs fois avec des valeurs incrementales
 // 7 uniquement pour des petit sets (5 par exemple)	
 // sinon mettre 5 max pour etre instant
-void	sort_bf(t_data *data, char **sol, int depth)
+int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 {
 	//On essaie de limiter les operations dispo
 	//char	*tab[11] = {"sa", "pb", "rra", "ra", "sb", "pa", "rrb", "rb", "ss", "rr", "rrr"};
@@ -109,16 +109,16 @@ void	sort_bf(t_data *data, char **sol, int depth)
 	i = 0;
 	if (checker_array(sol, data->s1, data->s1size))
 		{
-			printf("IS OK\n");
+			printf("A : IS OK, max_depth : %d\n", max_depth);
 			j = 0;
 			while (j < 7)
 			{
 				printf("sol[%d] : %s\n", j, sol[j]);
 				j++;
 			}
-			return ;
+			return (1);
 		}
-	while (i < 11 && depth < 7)
+	while (i < 11 && depth < max_depth)
 	{
 		sol[depth] = tab[i];
 		/*
@@ -135,21 +135,22 @@ void	sort_bf(t_data *data, char **sol, int depth)
 		if ((sol[0] == tab[0] && sol[1] == tab[0])
 			|| (sol[0] == tab[4] && sol[1] == tab[4])
 )
-			return ;
+			break ;
 		//ajouter check stack est bien taille de l'initiale
 		if (checker_array(sol, data->s1, data->s1size))
 		{
-			printf("IS OK\n");
+			printf("B : IS OK, max_depth : %d\n", max_depth);
 			j = 0;
 			while (j < 7)
 			{
 				printf("sol[%d] : %s\n", j, sol[j]);
 				j++;
 			}
-			return ;
+			return (1);
 		}
 		//printf("i : %d we go deeper : %d\n", i,  depth);
-		sort_bf(data, sol, depth + 1);
+		if (sort_bf(data, sol, depth + 1, max_depth))
+			return (1);	
 		//Pour trouver toutes les solutions
 		/*
 		if (!checker_array(sol, data->s1, data->s1size))
@@ -165,10 +166,10 @@ void	sort_bf(t_data *data, char **sol, int depth)
 			i++;
 		}
 		else
-			return ;
+			break ;
 	}
 	//printf("return.i : %d deeper : %d\n", i,  depth);
-	return ;
+	return (0);
 }
 
 //void	sort_bf(t_data *data, char **sol, int depth)
