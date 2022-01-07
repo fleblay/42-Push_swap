@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/07 09:15:16 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/07 12:47:17 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,9 @@ int		checker(t_list *instruct, long *input, int input_size);
 //void	sort_bf(t_data *data, char **sol,  int depth);
 int	sort_bf(t_data *data, char **sol, int depth, int max_depth);
 int		checker_array(char **tab, long *input, int input_size);
+void	opti_sort(t_data *data);
+int		get_index_first_le(t_list *start, int value);
+int		get_index_first_g(t_list *start, int value);
+int		get_index_first_l(t_list *start, int value);
 
 #endif

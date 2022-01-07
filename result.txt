@@ -1,706 +1,594 @@
-3 || 
-5 || 
-6 || 
-8 || 
-9 || 
+val mediane : 50
+val mediane_stack : 50
+pivot : 50
+pivot : 75
+pivot : 87
+pivot : 93
+pivot : 96
+pivot : 98
+doing b
+pivot : 98
+pivot : 96
+Doing something. value : 96, pivot : 96 : PA
+Doing something. value : 97, pivot : 96 : PA
+pivot : 93
+Doing something. value : 95, pivot : 93 : PA
+Doing something. value : 94, pivot : 93 : PA
+pivot : 87
+Doing something. value : 93, pivot : 87 : PA
+Doing something. value : 92, pivot : 87 : PA
+Doing something. value : 89, pivot : 87 : PA
+Doing something. value : 91, pivot : 87 : PA
+Doing something. value : 87, pivot : 87 : PA
+Doing something. value : 90, pivot : 87 : PA
+Doing something. value : 88, pivot : 87 : PA
+pivot : 75
+Doing something. value : 77, pivot : 75 : PA
+Doing something. value : 82, pivot : 75 : PA
+Doing something. value : 80, pivot : 75 : PA
+Doing something. value : 79, pivot : 75 : PA
+Doing something. value : 76, pivot : 75 : PA
+Doing something. value : 81, pivot : 75 : PA
+Doing something. value : 84, pivot : 75 : PA
+Doing something. value : 86, pivot : 75 : PA
+Doing something. value : 85, pivot : 75 : PA
+Doing something. value : 78, pivot : 75 : PA
+Doing something. value : 75, pivot : 75 : PA
+Doing something. value : 83, pivot : 75 : PA
+pivot : 50
+Doing something. value : 54, pivot : 50 : PA
+Doing something. value : 64, pivot : 50 : PA
+Doing something. value : 61, pivot : 50 : PA
+Doing something. value : 55, pivot : 50 : PA
+Doing something. value : 67, pivot : 50 : PA
+Doing something. value : 73, pivot : 50 : PA
+Doing something. value : 60, pivot : 50 : PA
+Doing something. value : 69, pivot : 50 : PA
+Doing something. value : 50, pivot : 50 : PA
+Doing something. value : 72, pivot : 50 : PA
+Doing something. value : 58, pivot : 50 : PA
+Doing something. value : 74, pivot : 50 : PA
+Doing something. value : 68, pivot : 50 : PA
+Doing something. value : 66, pivot : 50 : PA
+Doing something. value : 51, pivot : 50 : PA
+Doing something. value : 53, pivot : 50 : PA
+Doing something. value : 57, pivot : 50 : PA
+Doing something. value : 59, pivot : 50 : PA
+Doing something. value : 56, pivot : 50 : PA
+Doing something. value : 63, pivot : 50 : PA
+Doing something. value : 71, pivot : 50 : PA
+Doing something. value : 70, pivot : 50 : PA
+Doing something. value : 65, pivot : 50 : PA
+Doing something. value : 52, pivot : 50 : PA
+Doing something. value : 62, pivot : 50 : PA
+pivot : 25
+Doing something. value : 2, pivot : 25 : RB
+Doing something. value : 33, pivot : 25 : PA
+Doing something. value : 20, pivot : 25 : RB
+Doing something. value : 42, pivot : 25 : PA
+Doing something. value : 35, pivot : 25 : PA
+Doing something. value : 22, pivot : 25 : RB
+Doing something. value : 14, pivot : 25 : RB
+Doing something. value : 28, pivot : 25 : PA
+Doing something. value : 13, pivot : 25 : RB
+Doing something. value : 46, pivot : 25 : PA
+Doing something. value : 49, pivot : 25 : PA
+Doing something. value : 23, pivot : 25 : RB
+Doing something. value : 19, pivot : 25 : RB
+Doing something. value : 40, pivot : 25 : PA
+Doing something. value : 34, pivot : 25 : PA
+Doing something. value : 25, pivot : 25 : PA
+Doing something. value : 18, pivot : 25 : RB
+Doing something. value : 21, pivot : 25 : RB
+Doing something. value : 44, pivot : 25 : PA
+Doing something. value : 38, pivot : 25 : PA
+Doing something. value : 4, pivot : 25 : RB
+Doing something. value : 29, pivot : 25 : PA
+Doing something. value : 3, pivot : 25 : RB
+Doing something. value : 26, pivot : 25 : PA
+Doing something. value : 10, pivot : 25 : RB
+Doing something. value : 32, pivot : 25 : PA
+Doing something. value : 48, pivot : 25 : PA
+Doing something. value : 39, pivot : 25 : PA
+Doing something. value : 45, pivot : 25 : PA
+Doing something. value : 30, pivot : 25 : PA
+Doing something. value : 41, pivot : 25 : PA
+Doing something. value : 17, pivot : 25 : RB
+Doing something. value : 27, pivot : 25 : PA
+Doing something. value : 1, pivot : 25 : RB
+Doing something. value : 12, pivot : 25 : RB
+Doing something. value : 9, pivot : 25 : RB
+Doing something. value : 6, pivot : 25 : RB
+Doing something. value : 47, pivot : 25 : PA
+Doing something. value : 11, pivot : 25 :2 || 
 1 || 
-2 || 
-size a : 7
+3 || 
+4 || 
+5 || 
+7 || 
+8 || 
+11 || 
+6 || 
+9 || 
+10 || 
+16 || 
+15 || 
+24 || 
+12 || 
+17 || 
+21 || 
+18 || 
+19 || 
+23 || 
+13 || 
+14 || 
+22 || 
+20 || 
+36 || 
+43 || 
+31 || 
+37 || 
+47 || 
+27 || 
+41 || 
+30 || 
+45 || 
+39 || 
+48 || 
+32 || 
+26 || 
+29 || 
+38 || 
+44 || 
+25 || 
+34 || 
+40 || 
+49 || 
+46 || 
+28 || 
+35 || 
+42 || 
+33 || 
+62 || 
+52 || 
+65 || 
+70 || 
+71 || 
+63 || 
+56 || 
+59 || 
+57 || 
+53 || 
+51 || 
+66 || 
+68 || 
+74 || 
+58 || 
+72 || 
+50 || 
+69 || 
+60 || 
+73 || 
+67 || 
+55 || 
+61 || 
+64 || 
+54 || 
+83 || 
+75 || 
+78 || 
+85 || 
+86 || 
+84 || 
+81 || 
+76 || 
+79 || 
+80 || 
+82 || 
+77 || 
+88 || 
+90 || 
+87 || 
+91 || 
+89 || 
+92 || 
+93 || 
+94 || 
+95 || 
+97 || 
+96 || 
+98 || 
+99 || 
+100 || 
+size a : 100
 size b : 0
-val mediane : 5
-val mediane_stack : 5
-
-sol[0] : sa
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 0
-sol[0] : sa
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sa
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : pb
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 0
-sol[0] : pb
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pb
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : rra
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 0
-sol[0] : rra
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rra
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rra
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-IS OK
-sol[0] : ra
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 0
-sol[0] : ra
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ra
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : sb
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 0
-sol[0] : sb
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : sb
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : pa
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 0
-sol[0] : pa
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : pa
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : rrb
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 0
-sol[0] : rrb
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrb
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : rb
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 0
-sol[0] : rb
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rb
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : ss
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 0
-sol[0] : ss
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : ss
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : rr
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 0
-sol[0] : rr
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-i : 2 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : ra
-sol[2] : (null)
-sol[3] : (null)
-i : 3 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : sb
-sol[2] : (null)
-sol[3] : (null)
-i : 4 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : pa
-sol[2] : (null)
-sol[3] : (null)
-i : 5 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : rrb
-sol[2] : (null)
-sol[3] : (null)
-i : 6 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : rb
-sol[2] : (null)
-sol[3] : (null)
-i : 7 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : ss
-sol[2] : (null)
-sol[3] : (null)
-i : 8 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : rr
-sol[2] : (null)
-sol[3] : (null)
-i : 9 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rr
-sol[1] : rrr
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 1
-return.i : 0 deeper : 2
-return.i : 11 deeper : 1
-sol[0] : rrr
-sol[1] : (null)
-sol[2] : (null)
-sol[3] : (null)
-i : 10 we go deeper : 0
-sol[0] : rrr
-sol[1] : sa
-sol[2] : (null)
-sol[3] : (null)
-i : 0 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrr
-sol[1] : pb
-sol[2] : (null)
-sol[3] : (null)
-i : 1 we go deeper : 1
-return.i : 0 deeper : 2
-sol[0] : rrr
-sol[1] : rra
-sol[2] : (null)
-sol[3] : (null)
-IS OK
-return.i : 11 deeper : 0
-res checker_array : 0
+pb
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+pb
+pb
+pb
+ra
+pb
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+ra
+ra
+pb
+pb
+pb
+pb
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+ra
+pb
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+pb
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+pb
+pb
+pb
+pb
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+pb
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+pb
+pb
+ra
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+pb
+rra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+rb
+pa
+rb
+pa
+pa
+rb
+rb
+pa
+rb
+pa
+pa
+rb
+rb
+pa
+pa
+pa
+rb
+rb
+pa
+pa
+rb
+pa
+rb
+pa
+rb
+pa
+pa
+pa
+pa
+pa
+pa
+rb
+pa
+rb
+rb
+rb
+rb
+pa
+rb
+rb
+pa
+pa
+rb
+pa
+rb
+rb
+rb
+rb
+pa
+rb
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+rb
+rb
+rb
+pa
+rb
+pa
+rb
+rb
+rb
+pa
+pa
+rb
+rb
+pa
+rb
+rb
+rb
+rb
+pa
+rb
+pa
+pa
+pa
+pa
+pa
+pa
+rb
+pa
+pa
+pa
+pa
+ RB
+Doing something. value : 24, pivot : 25 : RB
+Doing something. value : 37, pivot : 25 : PA
+Doing something. value : 31, pivot : 25 : PA
+Doing something. value : 15, pivot : 25 : RB
+Doing something. value : 43, pivot : 25 : PA
+Doing something. value : 8, pivot : 25 : RB
+Doing something. value : 7, pivot : 25 : RB
+Doing something. value : 16, pivot : 25 : RB
+Doing something. value : 5, pivot : 25 : RB
+Doing something. value : 36, pivot : 25 : PA
+pivot : 12
+Doing something. value : 2, pivot : 12 : RB
+Doing something. value : 20, pivot : 12 : PA
+Doing something. value : 22, pivot : 12 : PA
+Doing something. value : 14, pivot : 12 : PA
+Doing something. value : 13, pivot : 12 : PA
+Doing something. value : 23, pivot : 12 : PA
+Doing something. value : 19, pivot : 12 : PA
+Doing something. value : 18, pivot : 12 : PA
+Doing something. value : 21, pivot : 12 : PA
+Doing something. value : 4, pivot : 12 : RB
+Doing something. value : 3, pivot : 12 : RB
+Doing something. value : 10, pivot : 12 : RB
+Doing something. value : 17, pivot : 12 : PA
+Doing something. value : 1, pivot : 12 : RB
+Doing something. value : 12, pivot : 12 : PA
+Doing something. value : 9, pivot : 12 : RB
+Doing something. value : 6, pivot : 12 : RB
+Doing something. value : 11, pivot : 12 : RB
+Doing something. value : 24, pivot : 12 : PA
+Doing something. value : 15, pivot : 12 : PA
+Doing something. value : 8, pivot : 12 : RB
+Doing something. value : 7, pivot : 12 : RB
+Doing something. value : 16, pivot : 12 : PA
+pivot : 6
+Doing something. value : 5, pivot : 6 : RB
+Doing something. value : 2, pivot : 6 : RB
+Doing something. value : 4, pivot : 6 : RB
+Doing something. value : 3, pivot : 6 : RB
+Doing something. value : 10, pivot : 6 : PA
+Doing something. value : 1, pivot : 6 : RB
+Doing something. value : 9, pivot : 6 : PA
+Doing something. value : 6, pivot : 6 : PA
+Doing something. value : 11, pivot : 6 : PA
+Doing something. value : 8, pivot : 6 : PA
+Doing something. value : 7, pivot : 6 : PA
+pivot : 3
+Doing something. value : 5, pivot : 3 : PA
+Doing something. value : 2, pivot : 3 : RB
+Doing something. value : 4, pivot : 3 : PA

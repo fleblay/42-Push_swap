@@ -6,10 +6,94 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:40:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 14:24:40 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/07 13:13:22 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+#include <stdio.h>
 
+void	opti_sort(t_data *data)
+{
+	int	pivot;
+	int	save_pivot[50] = {};
+	int	old_l1size;
+	int	old_l2size;
+	int	i;
+	int j;
+
+	j = 0;
+	while (data->l1size > 3)
+	{
+		pivot = get_mediane_stack(data->l1, data->l1size);
+		printf("pivot : %d\n", pivot);
+		old_l1size = data->l1size;
+		i = 0;
+		while (i < old_l1size && get_index_first_l(data->l1, pivot) != -1)
+		{
+			if (*(int *)(data->l1->content) < pivot)
+				pb(data);
+			else
+				ra(data);
+			i++;
+		}
+		save_pivot[j] = pivot;
+		j++;
+	}
+//	print_lst(*data);
+	sort_3a(data);
+	//print_lst(*data);
+
+	j--;
+	printf("doing b\n");
+	while (data->l2size > 3)
+	{
+		if (j >= 0)
+			pivot = save_pivot[j];
+		else
+			pivot = get_mediane_stack(data->l2, data->l2size);
+		printf("pivot : %d\n", pivot);
+		old_l2size = data->l2size;
+		i = 0;
+		while (i < old_l2size && get_index_first_g(data->l2, pivot) != -1)
+		{
+			printf("Doing something. value : %d, pivot : %d", *(int *)(data->l2->content), pivot);
+			//if (*(int *)(data->l2->content) > pivot)
+			if (*(int *)(data->l2->content) >= pivot)
+			{
+				printf(" : PA\n");
+				pa(data);
+			}
+			/*
+			else if (*(int *)(data->l2->content) == pivot)
+			{
+				printf("THIS IS THE PIVOT\n");
+				pa(data);
+				ra(data);
+			}
+			*/
+			else
+			{
+				printf(" : RB\n");
+				rb(data);
+			}
+			i++;
+			/*if (get_index_first_g(data->l2, pivot) == -1)
+			{
+				printf(" : RRA for pivot\n");
+				rra(data);
+			}
+			*/
+		}
+
+		j--;
+	}
+	//fonction pour tri 3b
+	
+	while (data->l2size)
+		pa(data);
+	print_lst(*data);
+	
+}
+	
