@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:40:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/10 13:18:10 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/10 15:49:24 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,19 @@ void	opti_sort(t_data *data)
 
 	//printf("nb misfit : %d\n", spot_misfits(data->l1));
 	j = 0;
-	pivot = 0;
+	//pivot = 0;
 	while (data->l1size > 3)// && pivot >= 0)
 	{
-	//	pivot = get_mediane_stack(data->l1, data->l1size);
-		pivot += 20;
+		pivot = get_mediane_stack(data->l1, data->l1size);
+		//pivot += 16;
 		printf("pivot : %d\n", pivot);
+		if (pivot > 50)
+			break ;
 		old_l1size = data->l1size;
 		i = 0;
 		while (i < old_l1size && get_index_first_l(data->l1, pivot) != -1)
 		{
+			//fx PUSH_LESS_EXPENSIVE !!!!
 			if (*(int *)(data->l1->content) < pivot)
 				pb(data);
 			else
@@ -44,9 +47,11 @@ void	opti_sort(t_data *data)
 		save_pivot[j] = pivot;
 		j++;
 	}
-//	print_lst(*data);
+	print_lst(*data);
 	sort_3a(data);
 	//print_lst(*data);
+	
+	return ;
 
 	j--;
 	printf("nb instruct : %d\n", ft_lstsize(data->start));
@@ -61,11 +66,12 @@ void	opti_sort(t_data *data)
 		}	
 		printf("pivot : %d\n", pivot);
 		old_l2size = data->l2size;
-		//if (pivot <= 4)
-		//	break ;
+		if (pivot < 50)
+			break ;
 		i = 0;
 		while (i < old_l2size && get_index_first_g(data->l2, pivot) != -1)
 		{
+			//faire avec 2eme aussi !
 			push_biggest_valueb(data);
 			/*
 //			printf("Doing something. value : %d, pivot : %d", *(int *)(data->l2->content), pivot);
@@ -100,7 +106,7 @@ void	opti_sort(t_data *data)
 	while (data->l2size)
 		pa(data);
 		*/
-	//print_lst(*data);
+	print_lst(*data);
 	printf("nb instruct : %d\n", ft_lstsize(data->start));
 //	printf("nb misfit : %d\n", spot_misfits(data->l1));
 	
