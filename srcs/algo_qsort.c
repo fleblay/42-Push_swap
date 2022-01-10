@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:44:09 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 11:25:19 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/10 16:43:53 by fred             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,16 +118,16 @@ void	p_sort_tab(t_data *data, long *tab, int begin, int end)
 void	p_sort_tab2(t_data *data, long *tab, int begin, int end)
 {
 	int		pivot;
-	int		save_begin;
-	int		save_end;
+	//int		save_begin;
+	//int		save_end;
 	long	tmp;
 
 	if (begin >= end)
 		return ;
 	if (is_sorted(data->l1))
 		return ;
-	save_begin = begin;
-	save_end = end;
+	//save_begin = begin;
+	//save_end = end;
 	pivot = get_mediane(tab, begin, end);
 	while (begin <= end && !is_sorted(data->l1))
 	{
