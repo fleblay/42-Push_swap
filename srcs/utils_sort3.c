@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:33:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 11:43:41 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/10 11:34:49 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,52 @@ int	get_mediane_stack(t_list *start, int stack_size)
 	med = tmp_tab[(stack_size - 1) / 2];
 	free(tmp_tab);
 	return (med);
+}
+
+int	get_biggest_valuea(t_data *data)
+{
+	int		big;
+	t_list	*start;
+
+	if (!data || !data->l1)
+		return (-1);
+	start = data->l1;
+	big = *((int *)(start->content));
+	while (start)
+	{
+		if (*((int *)(start->content)) > big)
+			big = *((int *)(start->content));
+		start = start->next;
+	}
+	return (big);
+}
+
+int	get_biggest_valueb(t_data *data)
+{
+	int		big;
+	t_list	*start;
+
+	if (!data || !data->l2)
+		return (-1);
+	start = data->l2;
+	big = *((int *)(start->content));
+	while (start)
+	{
+		if (*((int *)(start->content)) > big)
+			big = *((int *)(start->content));
+		start = start->next;
+	}
+	return (big);
+}
+
+void	push_biggest_valuea(t_data *data)
+{
+	move_top(data, get_biggest_valuea(data));
+	pb(data);
+}
+
+void	push_biggest_valueb(t_data *data)
+{
+	move_topb(data, get_biggest_valueb(data));
+	pa(data);
 }

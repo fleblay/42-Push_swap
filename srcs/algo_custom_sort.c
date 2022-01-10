@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:40:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/07 17:17:46 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/10 11:36:50 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	opti_sort(t_data *data)
 		i = 0;
 		while (i < old_l2size && get_index_first_g(data->l2, pivot) != -1)
 		{
+			push_biggest_valueb(data);
+			/*
 //			printf("Doing something. value : %d, pivot : %d", *(int *)(data->l2->content), pivot);
 			if (*(int *)(data->l2->content) >= pivot)
 			{
@@ -85,14 +87,17 @@ void	opti_sort(t_data *data)
 //				printf(" : RRA for pivot\n");
 				rra(data);
 			}
+			*/
 		}
 
 		j--;
 	}
 	sort_3b(data);
+	/*
 	while (data->l2size)
 		pa(data);
+		*/
 	print_lst(*data);
-	printf("nb misfit : %d\n", spot_misfits(data->l1));
+//	printf("nb misfit : %d\n", spot_misfits(data->l1));
 	
 }

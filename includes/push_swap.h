@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/07 17:07:21 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/10 11:32:16 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,10 @@ int		get_index_first_g(t_list *start, int value);
 int		get_index_first_l(t_list *start, int value);
 void	sort_3b(t_data *data);
 int		*get_sorted_array(long *tab, int begin, int end);
-int	spot_misfits(t_list *lst);
+int		spot_misfits(t_list *lst);
+int		get_biggest_valuea(t_data *data);
+int		get_biggest_valueb(t_data *data);
+void	push_biggest_valuea(t_data *data);
+void	push_biggest_valueb(t_data *data);
 
 #endif
