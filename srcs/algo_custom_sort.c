@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:40:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/10 11:36:50 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/10 13:18:10 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ void	opti_sort(t_data *data)
 
 	//printf("nb misfit : %d\n", spot_misfits(data->l1));
 	j = 0;
-	while (data->l1size > 3 && pivot >= 0)
+	pivot = 0;
+	while (data->l1size > 3)// && pivot >= 0)
 	{
-		pivot = get_mediane_stack(data->l1, data->l1size);
-//		printf("pivot : %d\n", pivot);
+	//	pivot = get_mediane_stack(data->l1, data->l1size);
+		pivot += 20;
+		printf("pivot : %d\n", pivot);
 		old_l1size = data->l1size;
 		i = 0;
 		while (i < old_l1size && get_index_first_l(data->l1, pivot) != -1)
@@ -47,7 +49,8 @@ void	opti_sort(t_data *data)
 	//print_lst(*data);
 
 	j--;
-//	printf("doing b\n");
+	printf("nb instruct : %d\n", ft_lstsize(data->start));
+	printf("doing b\n");
 	while (data->l2size > 3)
 	{
 		if (j >= 0)
@@ -56,7 +59,7 @@ void	opti_sort(t_data *data)
 		{
 			pivot = get_mediane_stack(data->l2, data->l2size);
 		}	
-//		printf("pivot : %d\n", pivot);
+		printf("pivot : %d\n", pivot);
 		old_l2size = data->l2size;
 		//if (pivot <= 4)
 		//	break ;
@@ -97,7 +100,8 @@ void	opti_sort(t_data *data)
 	while (data->l2size)
 		pa(data);
 		*/
-	print_lst(*data);
+	//print_lst(*data);
+	printf("nb instruct : %d\n", ft_lstsize(data->start));
 //	printf("nb misfit : %d\n", spot_misfits(data->l1));
 	
 }
