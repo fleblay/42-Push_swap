@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 13:10:37 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 15:41:42 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	main(int ac, char *av[])
 	update_size(&data);
 	printf("nb depart max sorted loop : %d\n", get_start_max_sorted(&data));
 	printf("dans max sorted loop ? : %d\n", is_in_loop_max_sorted(&data, 80));
+	data.max_loop = make_tab_max_sorted(&data);
+
 //	printf("val mediane : %d\n", get_mediane(data.s1, 0, data.s1size -1));
 //	printf("val mediane_stack : %d\n", get_mediane_stack(data.l1, data.l1size));
 	//printf("res checker : %d\n", checker(data.start, data.s1, data.s1size));
@@ -55,7 +57,8 @@ int	main(int ac, char *av[])
 	update_size(&data);
 //	print_lst(data);
 //	printf("\n");
-	opti_sort(&data);
+//	opti_sort(&data);
+	opti_sort2(&data);
 //	print_lst(data);
 // BF ALGO
 /*

@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:16:37 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 13:08:52 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 18:48:00 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,24 +97,145 @@ int	get_start_max_sorted(t_data *data)
 	return (ret);
 }
 
-int	is_in_loop_max_sorted(t_data *data, int value)
+int	*make_tab_max_sorted(t_data *data)
 {
 	int start_max_sorted;
 	int	nb_sorted;
 	int	i;
-
+	int	*tab;
+														
 	start_max_sorted = get_start_max_sorted(data);
 	printf("start max sorted : %d\n", start_max_sorted);
 	nb_sorted = get_nb_sorted(data, start_max_sorted);
 	printf("nb sorted : %d\n", nb_sorted);
 	i = 0;
+	tab = malloc(sizeof(int) * (nb_sorted + 1));
+	if (!tab)
+		return (NULL);
+	data->ml_size = nb_sorted + 1;
 	while (i < nb_sorted + 1)
 	{
-		printf("i : %d\n", i);
-//		printf(" index : %d\n", get_index(data->l1, start_max_sorted) + i);
-		if (get_value(data->l1, (get_index(data->l1, start_max_sorted) + i) % data->s1size) == value)
+		tab[i] = data->s1[(get_index(data->l1, start_max_sorted) + i) % data->s1size];
+		printf("tab_max[%d] : %d\n", i, tab[i]);
+		i++;
+	}
+	return (tab);
+}
+
+int	is_in_loop_max_sorted(t_data *data, int value)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->ml_size)
+	{
+		if (data->max_loop[i] == value)
 			return (1);
 		i++;
 	}
 	return (0);
+}
+
+int	get_biggest_inf_in_a(t_data *data, int value)
+{
+	t_list	*start;
+	int		max_min;
+	int		found;
+
+	found = 0;
+	start = data->l1;
+	if (!start)
+		return (value);
+	max_min = get_smallest_valuea(data);
+	while (start && *((int *)(start->content)))
+	{
+		if (*((int *)(start->content)) > max_min && *((int *)(start->content)) < value)
+		{
+			found = 1;
+			max_min = *((int *)(start->content));
+		}
+		start = start->next;
+	}
+	if (found)
+		return (max_min);
+	else
+		return (value);
+}
+
+int	get_smallest_sup_in_a(t_data *data, int value)
+{
+	t_list	*start;
+	int		min_max;
+	int		found;
+
+	found = 0;
+	start = data->l1;
+	if (!start)
+		return (value);
+	min_max = get_biggest_valuea(data);
+	while (start && *((int *)(start->content)))
+	{
+		if (*((int *)(start->content)) < min_max && *((int *)(start->content)) > value)
+		{
+			found = 1;
+			min_max = *((int *)(start->content));
+		}
+		start = start->next;
+	}
+	if (found)
+		return (min_max);
+	else
+		return (value);
+}
+
+int	get_smallest_sup_in_b(t_data *data, int value)
+{
+	t_list	*start;
+	int		min_max;
+	int		found;
+
+	found = 0;
+	start = data->l2;
+	if (!start)
+		return (value);
+	min_max = get_biggest_valueb(data);
+	while (start && *((int *)(start->content)))
+	{
+		if (*((int *)(start->content)) < min_max && *((int *)(start->content)) > value)
+		{
+			found = 1;
+			min_max = *((int *)(start->content));
+		}
+		start = start->next;
+	}
+	if (found)
+		return (min_max);
+	else
+		return (value);
+}
+
+int	get_biggest_inf_in_b(t_data *data, int value)
+{
+	t_list	*start;
+	int		max_min;
+	int		found;
+
+	found = 0;
+	start = data->l2;
+	if (!start)
+		return (value);
+	max_min = get_smallest_valueb(data);
+	while (start && *((int *)(start->content)))
+	{
+		if (*((int *)(start->content)) > max_min && *((int *)(start->content)) < value)
+		{
+			found = 1;
+			max_min = *((int *)(start->content));
+		}
+		start = start->next;
+	}
+	if (found)
+		return (max_min);
+	else
+		return (value);
 }

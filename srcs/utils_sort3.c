@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:33:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/10 11:34:49 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 18:44:21 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,42 @@ int	get_biggest_valuea(t_data *data)
 		start = start->next;
 	}
 	return (big);
+}
+
+int	get_smallest_valuea(t_data *data)
+{
+	int		small;
+	t_list	*start;
+
+	if (!data || !data->l1)
+		return (-1);
+	start = data->l1;
+	small = *((int *)(start->content));
+	while (start)
+	{
+		if (*((int *)(start->content)) < small)
+			small = *((int *)(start->content));
+		start = start->next;
+	}
+	return (small);
+}
+
+int	get_smallest_valueb(t_data *data)
+{
+	int		small;
+	t_list	*start;
+
+	if (!data || !data->l2)
+		return (-1);
+	start = data->l2;
+	small = *((int *)(start->content));
+	while (start)
+	{
+		if (*((int *)(start->content)) < small)
+			small = *((int *)(start->content));
+		start = start->next;
+	}
+	return (small);
 }
 
 int	get_biggest_valueb(t_data *data)

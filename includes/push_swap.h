@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 12:53:28 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 18:48:39 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 typedef	struct s_data {
 	long	*s1;
 	int		*sorted_s1;
+	int		*max_loop;
+	int		ml_size;
 	int		s1size;
 	t_list	*l1;
 	int		l1size;
@@ -98,5 +100,12 @@ int		get_final_index(t_data *data, int value);
 int		get_nb_sorted(t_data *data, int start_value);
 int		get_start_max_sorted(t_data *data);
 int		is_in_loop_max_sorted(t_data *data, int value);
+void	opti_sort2(t_data *data);
+int		*make_tab_max_sorted(t_data *data);
+int		get_biggest_inf_in_a(t_data *data, int value);
+int		get_smallest_sup_in_a(t_data *data, int value);
+int		get_smallest_valuea(t_data *data);
+int		get_smallest_valueb(t_data *data);
+int		get_biggest_inf_in_b(t_data *data, int value);
 
 #endif

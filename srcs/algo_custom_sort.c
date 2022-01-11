@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:40:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 12:27:18 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:43:49 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <stdio.h>
 
 void	opti_sort(t_data *data)
-{ int	pivot;
+{
+	int	pivot;
 	int	save_pivot[50] = {};
 	int	old_l1size;
 	int	old_l2size;
@@ -49,6 +50,7 @@ void	opti_sort(t_data *data)
 	print_lst(*data);
 	sort_3a(data);
 	//print_lst(*data);
+	//
 	
 //	return ;
 
