@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/10 13:09:02 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 11:55:16 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	main(int ac, char *av[])
 		i++;
 	}
 	*/
+	//printf("index de 50 : %d\n", get_final_index(&data, 50));
+	printf("nb sorted pour 50 start : %d\n", get_nb_sorted(&data, 50));
 	data.l1 = listify(data.s1, data.s1size);
 	data.l2 = listify(data.s1, 0);
 	update_size(&data);

@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:41:30 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/07 16:29:12 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 11:28:29 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,27 +132,3 @@ int	get_mediane(long *tab, int begin, int end)
 	return (med);
 }
 
-int	*get_sorted_array(long *tab, int begin, int end)
-{
-	int	i;
-	int	*tmp_tab;
-
-	if (begin >= end)
-		return (NULL);
-	tmp_tab = (int *)malloc((end - begin + 1) * sizeof(int));
-	if (!tmp_tab)
-		return (NULL);
-	i = -1;
-	while ((++i) < end - begin + 1)
-		tmp_tab[i] = tab[i + begin];
-	i = 0;
-	while (i < end - begin)
-	{
-		if (tmp_tab[i] > tmp_tab[i + 1])
-			custom_swap(&(tmp_tab[i]), &(tmp_tab[i + 1]), &i);
-		else
-			i++;
-	}
-	return (tmp_tab);
-}
-// int is_loop_sorted(t_list *lst);
