@@ -6,12 +6,13 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:16:37 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 11:55:40 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 13:08:52 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+#include <stdio.h>
 
 int	*get_sorted_array(long *tab, int begin, int end)
 {
@@ -71,4 +72,49 @@ int	get_nb_sorted(t_data *data, int start_value)
 		j++;
 	}
 	return (nb_sorted);
+}
+
+int	get_start_max_sorted(t_data *data)
+{
+	int i;
+	int	ret;
+	int	nb_sorted;
+	int	max_nb_sorted;
+
+	i = 0;
+	ret = data->sorted_s1[0];
+	max_nb_sorted = get_nb_sorted(data, data->sorted_s1[0]);
+	while (i < data->s1size)
+	{
+		nb_sorted = get_nb_sorted(data, data->sorted_s1[i]);
+		if (nb_sorted > max_nb_sorted)
+		{
+			max_nb_sorted = nb_sorted;
+			ret = data->sorted_s1[i];
+		}
+		i++;
+	}
+	return (ret);
+}
+
+int	is_in_loop_max_sorted(t_data *data, int value)
+{
+	int start_max_sorted;
+	int	nb_sorted;
+	int	i;
+
+	start_max_sorted = get_start_max_sorted(data);
+	printf("start max sorted : %d\n", start_max_sorted);
+	nb_sorted = get_nb_sorted(data, start_max_sorted);
+	printf("nb sorted : %d\n", nb_sorted);
+	i = 0;
+	while (i < nb_sorted + 1)
+	{
+		printf("i : %d\n", i);
+//		printf(" index : %d\n", get_index(data->l1, start_max_sorted) + i);
+		if (get_value(data->l1, (get_index(data->l1, start_max_sorted) + i) % data->s1size) == value)
+			return (1);
+		i++;
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 11:55:16 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 13:10:37 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ int	main(int ac, char *av[])
 	}
 	*/
 	//printf("index de 50 : %d\n", get_final_index(&data, 50));
-	printf("nb sorted pour 50 start : %d\n", get_nb_sorted(&data, 50));
+//	printf("nb sorted pour 50 start : %d\n", get_nb_sorted(&data, 50));
 	data.l1 = listify(data.s1, data.s1size);
 	data.l2 = listify(data.s1, 0);
 	update_size(&data);
+	printf("nb depart max sorted loop : %d\n", get_start_max_sorted(&data));
+	printf("dans max sorted loop ? : %d\n", is_in_loop_max_sorted(&data, 80));
 //	printf("val mediane : %d\n", get_mediane(data.s1, 0, data.s1size -1));
 //	printf("val mediane_stack : %d\n", get_mediane_stack(data.l1, data.l1size));
 	//printf("res checker : %d\n", checker(data.start, data.s1, data.s1size));

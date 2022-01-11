@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 11:54:23 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/11 12:53:28 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,7 @@ void	push_biggest_valuea(t_data *data);
 void	push_biggest_valueb(t_data *data);
 int		get_final_index(t_data *data, int value);
 int		get_nb_sorted(t_data *data, int start_value);
+int		get_start_max_sorted(t_data *data);
+int		is_in_loop_max_sorted(t_data *data, int value);
 
 #endif
