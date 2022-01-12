@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 18:48:39 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/12 09:35:37 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,10 @@ int		get_smallest_sup_in_a(t_data *data, int value);
 int		get_smallest_valuea(t_data *data);
 int		get_smallest_valueb(t_data *data);
 int		get_biggest_inf_in_b(t_data *data, int value);
+void	opti_sort3(t_data *data);
+int		r_get_index_first_g(t_list *start, int value);
+int		r_get_index_first_ge(t_list *start, int value);
+int		r_get_index_first_l(t_list *start, int value);
+int		r_get_index_first_le(t_list *start, int value);
 
 #endif
