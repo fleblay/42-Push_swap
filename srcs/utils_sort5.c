@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 09:25:13 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/12 13:20:41 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/12 18:04:12 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,3 +110,23 @@ int	calculate_cheapest_move(t_data *data, int index_a, int index_b)
 	else
 		return ('b');
 }
+
+int	calculate_cheapest_move_b(t_data* data, int index_big, int index_low)
+{
+	int cost_big;
+	int cost_low;
+
+	if (index_big < data->l2size / 2)
+		cost_big = index_big;
+	else
+		cost_big = data->l2size - index_big;
+	if (index_low < data->l2size / 2)
+		cost_low = index_low;
+	else
+		cost_low = data->l2size - index_low;
+	if (cost_big <= cost_low)
+		return (1);
+	else
+		return (2);
+}
+
