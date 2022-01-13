@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 09:22:52 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 11:06:28 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 12:18:18 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,6 @@ void	opti_sort5(t_data *data)
 //		j++;
 //	}
 
-	rra(data);
-	pb(data);
 	print_lst(*data);
 	printf("nb instruct : %d\n", ft_lstsize(data->start));
 	//sort_3a(data);
@@ -99,7 +97,17 @@ void	opti_sort5(t_data *data)
 	printf("nb instruct : %d\n", ft_lstsize(data->start));
 	printf("doing b\n");
 
-	print_infob(data);
+	int to_moveinb;
+	int	to_moveina;
+
+	while (data->l2size)
+	{
+		print_infob(data, &to_moveina, &to_moveinb);
+		//printf("tomovein a : %d , tomovein b : %d\n", to_moveina, to_moveinb);
+		move_top(data, to_moveina);
+		move_topb(data, to_moveinb);
+		pa(data);
+	}
 
 // ALGO 1 : POUSSER LE PLUS GRAND A CHAQUE FOIS
 	/*	

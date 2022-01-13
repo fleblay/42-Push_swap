@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 09:25:13 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 11:18:34 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 12:16:47 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,33 +156,38 @@ int	cost_mvtopb(t_data *data, int value)
 		return (data->l2size - pos_of_value);
 }
 
-void	print_infob(t_data *data)
+int	print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb)
 {
 	t_list	*start;
 	int		curr_val;	
 	int		cost_to_topb;
 	int		ssia;
 	int		cost_to_topssia;
-	int		sia;
-	int		total_cost;
+	int		cheapest_cost;
 
 	if (!data || !data->l2)
-		return ;
+		return (-1);
 	start = data->l2;
+	cheapest_cost = data->l1size + data->l2size;
 	while (start)
 	{
 		curr_val = *(int *)(start->content);
 		cost_to_topb = cost_mvtopb(data, curr_val);
-		ssia = get_smallest_sup_in_a(data, curr_val);
-		if (ssia != curr_val)
-			cost_to_topssia = cost_mvtop(data ,ssia);
+		if (get_smallest_sup_in_a(data, curr_val) != curr_val)
+			ssia = get_smallest_sup_in_a(data, curr_val);
 		else
-			cost_to_topssia = 42000;
-		sia = get_smallest_valuea(data);
-		total_cost = cost_to_topb + cost_to_topssia;
-		printf("curr_val : %3d || cost_to_topb : %3d || ssia : %3d || cost_ssia : %3d || sia %3d, total_cost : %3d\n", curr_val, cost_to_topb, ssia, cost_to_topssia, sia, total_cost);
+			ssia = get_smallest_valuea(data);
+		cost_to_topssia = cost_mvtop(data, ssia);
+//		printf("curr_val : %3d || cost_to_topb : %3d || ssia : %3d || cost_ssia : %3d || total_cost : %3d\n", curr_val, cost_to_topb, ssia, cost_to_topssia, cost_to_topb + cost_to_topssia);
 		
+		if (cost_to_topb + cost_to_topssia < cheapest_cost)
+		{
+//			printf("changeing cheapest to %3d with value %3d\n", cost_to_topb + cost_to_topssia, curr_val);
+			cheapest_cost = cost_to_topb + cost_to_topssia;
+			*to_mvtopb = curr_val;
+			*to_mvtopa = ssia;
+		}
 		start = start->next;
 	}
+	return (0);
 }
-
