@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 09:22:52 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 12:18:18 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 12:37:46 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ void	opti_sort5(t_data *data)
 		move_topb(data, to_moveinb);
 		pa(data);
 	}
+	move_top(data, get_smallest_valuea(data));
 
 // ALGO 1 : POUSSER LE PLUS GRAND A CHAQUE FOIS
 	/*	
