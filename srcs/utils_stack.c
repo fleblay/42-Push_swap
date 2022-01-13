@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:43:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 14:47:05 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:41:19 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	print_instruct(t_list *start)
 		count++;
 		start = start->next;
 	}
-	printf("nb ope : %d\n", count);
+//	printf("nb ope : %d\n", count);
 }
 
 void	print_opti_instruct(t_list *start)
@@ -97,7 +97,7 @@ void	print_opti_instruct(t_list *start)
 				count++;
 				start = start->next;
 			}
-			else
+			else if (start)
 			{
 				printer(start->content);
 				count++;
@@ -105,12 +105,16 @@ void	print_opti_instruct(t_list *start)
 		}
 		else if (start)
 		{
-			printer(start);
+			printer(start->content);
 			count++;
 		}
 		start = start->next;
 	}
-	printf("nb opti ope : %d\n", count);
+	/*
+	ft_putstr_fd("nb ope : ", 1);
+	ft_putnbr_fd(count, 1);
+	ft_putstr_fd("\n", 1);
+	*/
 }
 
 

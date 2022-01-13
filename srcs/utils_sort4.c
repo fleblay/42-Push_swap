@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:16:37 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 10:26:58 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:25:51 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,9 +105,9 @@ int	*make_tab_max_sorted(t_data *data)
 	int	*tab;
 														
 	start_max_sorted = get_start_max_sorted(data);
-	printf("start max sorted : %d\n", start_max_sorted);
+//	printf("start max sorted : %d\n", start_max_sorted);
 	nb_sorted = get_nb_sorted(data, start_max_sorted);
-	printf("nb sorted : %d\n", nb_sorted);
+//	printf("nb sorted : %d\n", nb_sorted);
 	i = 0;
 	tab = malloc(sizeof(int) * (nb_sorted + 1));
 	if (!tab)
@@ -116,7 +116,7 @@ int	*make_tab_max_sorted(t_data *data)
 	while (i < nb_sorted + 1)
 	{
 		tab[i] = data->s1[(get_index(data->l1, start_max_sorted) + i) % data->s1size];
-		printf("tab_max[%d] : %d\n", i, tab[i]);
+//		printf("tab_max[%d] : %d\n", i, tab[i]);
 		i++;
 	}
 	return (tab);

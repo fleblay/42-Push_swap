@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:40:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 16:43:49 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:23:27 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,6 @@ void	opti_sort(t_data *data)
 		*/
 	print_lst(*data);
 	printf("nb instruct : %d\n", ft_lstsize(data->start));
-//	printf("nb misfit : %d\n", spot_misfits(data->l1));
+	printf("nb misfit : %d\n", spot_misfits(data->l1));
 	
 }

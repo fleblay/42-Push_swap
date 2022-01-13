@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:41:30 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 11:28:29 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:17:20 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,4 +131,3 @@ int	get_mediane(long *tab, int begin, int end)
 	free(tmp_tab);
 	return (med);
 }
-

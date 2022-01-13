@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:06:04 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/07 10:05:59 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:53:26 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 		//ajouter check stack est bien taille de l'initiale
 		if (checker_array(sol, data->s1, data->s1size))
 		{
-			printf("B : IS OK, max_depth : %d\n", max_depth);
+			//printf("B : IS OK, max_depth : %d\n", max_depth);
 			j = 0;
 			while (j < 9)
 			{
-				printf("sol[%d] : %s\n", j, sol[j]);
+				//printf("sol[%d] : %s\n", j, sol[j]);
 				j++;
 			}
 			return (1);
@@ -91,41 +91,3 @@ int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 	//printf("return.i : %d deeper : %d\n", i,  depth);
 	return (0);
 }
-
-//void	sort_bf(t_data *data, char **sol, int depth)
-//{
-//	char	*tab[11] = {"sa", "pb", "rra", "ra", "sb", "pa", "rrb", "rb", "ss", "rr", "rrr"};
-//	int		i;
-//
-//	i = 0;
-//	while (i < 11 && depth < 20)
-//	{
-//		sol[depth] = tab[i];
-//		/*
-//		int j = 0;
-//		while (j < 4)
-//		{
-//			printf("sol[%d] : %s\n", j, sol[j]);
-//			j++;
-//		}
-//		*/
-//		if (checker_array(sol, data->s1, data->s1size))
-//		{
-//		//	printf("IS OK\n");
-//			return ;
-//		}
-//		//printf("i : %d we go deeper : %d\n", i,  depth);
-//		sort_bf(data, sol, depth + 1);
-//		if (!checker_array(sol, data->s1, data->s1size))
-//		{
-//			sol[depth] = 0;
-//			i++;
-//		}
-//		//i++;
-//		else
-//			return ;
-//	}
-//	//printf("return.i : %d deeper : %d\n", i,  depth);
-//	return ;
-//}
-//
