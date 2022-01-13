@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/12 18:33:23 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 10:49:46 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ int	main(int ac, char *av[])
 //	print_lst(data);
 //	printf("\n");
 //	opti_sort(&data);
-	opti_sort3(&data);
+//	opti_sort3(&data);
 //	opti_sort4(&data);
+	opti_sort5(&data);
 //	print_lst(data);
 // BF ALGO
 /*
@@ -88,7 +89,7 @@ int	main(int ac, char *av[])
 	*/
 	printf("biggest value a:%d\n", get_biggest_valuea(&data));
 	printf("biggest value b:%d\n", get_biggest_valueb(&data));
-	print_instruct(data.start);
+//	print_instruct(data.start);
 	custom_exit(0, &data);
 	return (0);
 }

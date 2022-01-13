@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:16:37 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 18:48:00 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 10:26:58 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,102 +140,78 @@ int	get_biggest_inf_in_a(t_data *data, int value)
 {
 	t_list	*start;
 	int		max_min;
-	int		found;
 
-	found = 0;
 	start = data->l1;
 	if (!start)
 		return (value);
 	max_min = get_smallest_valuea(data);
-	while (start && *((int *)(start->content)))
+	if (max_min > value)
+		return (value);
+	while (start)
 	{
 		if (*((int *)(start->content)) > max_min && *((int *)(start->content)) < value)
-		{
-			found = 1;
 			max_min = *((int *)(start->content));
-		}
 		start = start->next;
 	}
-	if (found)
-		return (max_min);
-	else
-		return (value);
+	return (max_min);
 }
 
 int	get_smallest_sup_in_a(t_data *data, int value)
 {
 	t_list	*start;
 	int		min_max;
-	int		found;
 
-	found = 0;
 	start = data->l1;
 	if (!start)
 		return (value);
 	min_max = get_biggest_valuea(data);
-	while (start && *((int *)(start->content)))
+	if (min_max < value)
+		return (value);
+	while (start)
 	{
 		if (*((int *)(start->content)) < min_max && *((int *)(start->content)) > value)
-		{
-			found = 1;
 			min_max = *((int *)(start->content));
-		}
 		start = start->next;
 	}
-	if (found)
-		return (min_max);
-	else
-		return (value);
+	return (min_max);
 }
 
 int	get_smallest_sup_in_b(t_data *data, int value)
 {
 	t_list	*start;
 	int		min_max;
-	int		found;
 
-	found = 0;
 	start = data->l2;
 	if (!start)
 		return (value);
 	min_max = get_biggest_valueb(data);
-	while (start && *((int *)(start->content)))
+	if (min_max < value)
+		return (value);
+	while (start)
 	{
 		if (*((int *)(start->content)) < min_max && *((int *)(start->content)) > value)
-		{
-			found = 1;
 			min_max = *((int *)(start->content));
-		}
 		start = start->next;
 	}
-	if (found)
-		return (min_max);
-	else
-		return (value);
+	return (min_max);
 }
 
 int	get_biggest_inf_in_b(t_data *data, int value)
 {
 	t_list	*start;
 	int		max_min;
-	int		found;
 
-	found = 0;
 	start = data->l2;
 	if (!start)
 		return (value);
 	max_min = get_smallest_valueb(data);
-	while (start && *((int *)(start->content)))
+	if (max_min > value)
+		return (value);
+	while (start)
 	{
 		if (*((int *)(start->content)) > max_min && *((int *)(start->content)) < value)
-		{
-			found = 1;
 			max_min = *((int *)(start->content));
-		}
 		start = start->next;
 	}
-	if (found)
-		return (max_min);
-	else
-		return (value);
+	return (max_min);
 }

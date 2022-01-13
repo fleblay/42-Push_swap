@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 09:25:13 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/12 18:04:12 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 11:18:34 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,61 @@ int	calculate_cheapest_move_b(t_data* data, int index_big, int index_low)
 		return (1);
 	else
 		return (2);
+}
+
+int	cost_mvtop(t_data *data, int value)
+{
+	int	pos_of_value;
+
+	pos_of_value = get_index(data->l1, value);
+	if (pos_of_value == -1)
+		return (-1);
+	if (pos_of_value <= (data->l1size / 2))
+		return (pos_of_value);
+	else
+		return (data->l1size - pos_of_value);
+}
+
+int	cost_mvtopb(t_data *data, int value)
+{
+	int	pos_of_value;
+
+	pos_of_value = get_index(data->l2, value);
+	if (pos_of_value == -1)
+		return (-1);
+	if (pos_of_value <= (data->l2size / 2))
+		return (pos_of_value);
+	else
+		return (data->l2size - pos_of_value);
+}
+
+void	print_infob(t_data *data)
+{
+	t_list	*start;
+	int		curr_val;	
+	int		cost_to_topb;
+	int		ssia;
+	int		cost_to_topssia;
+	int		sia;
+	int		total_cost;
+
+	if (!data || !data->l2)
+		return ;
+	start = data->l2;
+	while (start)
+	{
+		curr_val = *(int *)(start->content);
+		cost_to_topb = cost_mvtopb(data, curr_val);
+		ssia = get_smallest_sup_in_a(data, curr_val);
+		if (ssia != curr_val)
+			cost_to_topssia = cost_mvtop(data ,ssia);
+		else
+			cost_to_topssia = 42000;
+		sia = get_smallest_valuea(data);
+		total_cost = cost_to_topb + cost_to_topssia;
+		printf("curr_val : %3d || cost_to_topb : %3d || ssia : %3d || cost_ssia : %3d || sia %3d, total_cost : %3d\n", curr_val, cost_to_topb, ssia, cost_to_topssia, sia, total_cost);
+		
+		start = start->next;
+	}
 }
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_custom_sort3.c                                :+:      :+:    :+:   */
+/*   algo_custom_sort5.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 09:17:33 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 09:22:58 by fle-blay         ###   ########.fr       */
+/*   Created: 2022/01/13 09:22:52 by fle-blay          #+#    #+#             */
+/*   Updated: 2022/01/13 11:06:28 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 #include "libft.h"
 #include <stdio.h>
 
-void	opti_sort3(t_data *data)
+void	opti_sort5(t_data *data)
 {
-	int	pivot;
-	int	save_pivot[50] = {};
-	int	old_l1size;
 //	int	old_l2size;
-	int	i;
 	int j;
 
 
 	//printf("nb misfit : %d\n", spot_misfits(data->l1));
 	j = 0;
-	/*
 	while (data->l1size > data->ml_size)
 	{
 		if (!is_in_loop_max_sorted(data, *(int *)(data->l1->content)))
@@ -34,56 +29,62 @@ void	opti_sort3(t_data *data)
 		else
 			ra(data);
 	}
-	*/
-	while (data->l1size > 3)// || data->l1size > data->ml_size)
-	{
-		//printf("data_l1_size : %d\n", data->l1size);
-		//Mediane impossible avec loop
-		pivot = get_mediane_stack(data->l1, data->l1size);
-		// a adapter avec quartiles
-	//	pivot += 49;
-		printf("pivot : %d\n", pivot);
-		//if (pivot > 50)
-		//	break ;
-		old_l1size = data->l1size;
-		i = 0;
-// OPTION 1 : ON POUSSE EN BOUCLANT TANT EN RA TANT QU'IL Y A UNE VAL INF AU PIVOT DANS A
-		///*
-		while (i < old_l1size && get_index_first_le(data->l1, pivot) != -1 && data->l1size > 3)// && data->l1size > data->ml_size)
-		{
-			if (*(int *)(data->l1->content) <= pivot)// && !is_in_loop_max_sorted(data, *(int *)(data->l1->content)))
-				pb(data);
-			else
-				ra(data);
-			i++;
-		}
-		//*/
-		/*
-// OPTION 2 : ON POUSSE LE MOINS CHER VERS LE HAUT TANT QU'IL Y A UNE VAL INF AU PIVOT DANS A
-		while (get_index_first_l(data->l1, pivot) != -1 && data->l1size > 3)
-		{
-			if (data->l1size - r_get_index_first_l(data->l1, pivot) >
-				get_index_first_l(data->l1, pivot))
-			{
-				printf("from TOP\n");
-				move_top(data, get_value(data->l1, get_index_first_l(data->l1, pivot)));
-			}
-			else
-			{
-				printf("from BOTTOM\n");
-				move_top(data, get_value(data->l1, r_get_index_first_l(data->l1, pivot)));
-			}
-			pb(data);
-		}
-		*/
 
-		save_pivot[j] = pivot;
-		j++;
-	}
+//	int	i;
+//	int	old_l1size;
+//	int	pivot;
+//	int	save_pivot[50] = {};
+//	while (data->l1size > 3)// || data->l1size > data->ml_size)
+//	{
+//		//printf("data_l1_size : %d\n", data->l1size);
+//		//Mediane impossible avec loop
+//		pivot = get_mediane_stack(data->l1, data->l1size);
+//		// a adapter avec quartiles
+//	//	pivot += 49;
+//		printf("pivot : %d\n", pivot);
+//		//if (pivot > 50)
+//		//	break ;
+//		old_l1size = data->l1size;
+//		i = 0;
+//// OPTION 1 : ON POUSSE EN BOUCLANT TANT EN RA TANT QU'IL Y A UNE VAL INF AU PIVOT DANS A
+//		///*
+//		while (i < old_l1size && get_index_first_le(data->l1, pivot) != -1 && data->l1size > 3)// && data->l1size > data->ml_size)
+//		{
+//			if (*(int *)(data->l1->content) <= pivot)// && !is_in_loop_max_sorted(data, *(int *)(data->l1->content)))
+//				pb(data);
+//			else
+//				ra(data);
+//			i++;
+//		}
+//		//*/
+//		/*
+//// OPTION 2 : ON POUSSE LE MOINS CHER VERS LE HAUT TANT QU'IL Y A UNE VAL INF AU PIVOT DANS A
+//		while (get_index_first_l(data->l1, pivot) != -1 && data->l1size > 3)
+//		{
+//			if (data->l1size - r_get_index_first_l(data->l1, pivot) >
+//				get_index_first_l(data->l1, pivot))
+//			{
+//				printf("from TOP\n");
+//				move_top(data, get_value(data->l1, get_index_first_l(data->l1, pivot)));
+//			}
+//			else
+//			{
+//				printf("from BOTTOM\n");
+//				move_top(data, get_value(data->l1, r_get_index_first_l(data->l1, pivot)));
+//			}
+//			pb(data);
+//		}
+//		*/
+//
+//		save_pivot[j] = pivot;
+//		j++;
+//	}
 
+	rra(data);
+	pb(data);
 	print_lst(*data);
 	printf("nb instruct : %d\n", ft_lstsize(data->start));
-	sort_3a(data);
+	//sort_3a(data);
 	//print_lst(*data);
 	
 	/*
@@ -98,11 +99,14 @@ void	opti_sort3(t_data *data)
 	printf("nb instruct : %d\n", ft_lstsize(data->start));
 	printf("doing b\n");
 
+	print_infob(data);
+
 // ALGO 1 : POUSSER LE PLUS GRAND A CHAQUE FOIS
-	///*	
+	/*	
 	int ret ;
 	while (data->l2size)
 	{
+		
 		ret = calculate_cheapest_move_b(data, get_index(data->l2, get_biggest_valueb(data)), get_index(data->l2, get_smallest_valueb(data)));
 		if (ret == 1)
 		{
@@ -118,14 +122,12 @@ void	opti_sort3(t_data *data)
 		}
 	}
 
-	/*
 	while (data->l2size)
 	{
 		push_biggest_valueb(data);
 	}
 	print_lst(*data);
 	*/
-	//*/
 
 	
 // ALGO 2 : POUSSER LE PLUS PETIT SUP DE STACK A PAR RAPPORT AU TOP DE B VERS LE HAUT

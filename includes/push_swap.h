@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/12 17:59:24 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 10:46:58 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,9 @@ int		r_get_index_first_le(t_list *start, int value);
 int		calculate_cheapest_move(t_data *data, int index_a, int index_b);
 void	opti_sort4(t_data *data);
 int		calculate_cheapest_move_b(t_data* data, int index_big, int index_low);
+void	opti_sort5(t_data *data);
+int		cost_mvtop(t_data *data, int value);
+int		cost_mvtopb(t_data *data, int value);
+void	print_infob(t_data *data);
 
 #endif
