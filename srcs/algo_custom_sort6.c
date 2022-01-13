@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_custom_sort5.c                                :+:      :+:    :+:   */
+/*   algo_custom_sort6.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 09:22:52 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 14:50:05 by fle-blay         ###   ########.fr       */
+/*   Created: 2022/01/13 14:51:28 by fle-blay          #+#    #+#             */
+/*   Updated: 2022/01/13 15:19:24 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,30 @@
 #include "libft.h"
 #include <stdio.h>
 
-void	opti_sort5(t_data *data)
+void	opti_sort6(t_data *data)
 {
+	int	pivot;
 	int to_moveinb;
 	int	to_moveina;
+	int i;
+	int old_l1size;
 
 	while (data->l1size > data->ml_size)
 	{
-		if (!is_in_loop_max_sorted(data, *(int *)(data->l1->content)))
-			pb(data);
-		else
-			ra(data);
+		if (get_mediane_stack(data->l1, data->l1size) == pivot)
+			break ;
+		pivot = get_mediane_stack(data->l1, data->l1size);
+		i = 0;
+		old_l1size = data->l1size;
+		while (i < old_l1size && get_index_first_le(data->l1, pivot) != -1)
+		{
+			if (!is_in_loop_max_sorted(data, *(int *)(data->l1->content))
+				&& *(int *)(data->l1->content) <= pivot)
+				pb(data);
+			else
+				ra(data);
+			i++;
+		}
 	}
 	print_lst(*data);
 	printf("nb instruct : %d\n", ft_lstsize(data->start));

@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 12:08:42 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 14:52:04 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ int		get_mediane_stack(t_list *start, int stack_size);
 void	sort_3a(t_data *data);
 void	do_instruct(void *content, t_data *test_data);
 int		checker(t_list *instruct, long *input, int input_size);
-//void	sort_bf(t_data *data, char **sol,  int depth);
 int	sort_bf(t_data *data, char **sol, int depth, int max_depth);
 int		checker_array(char **tab, long *input, int input_size);
 void	opti_sort(t_data *data);
@@ -119,5 +118,8 @@ void	opti_sort5(t_data *data);
 int		cost_mvtop(t_data *data, int value);
 int		cost_mvtopb(t_data *data, int value);
 int		print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb);
+void	print_opti_instruct(t_list *start);
+int		printer2(void *content1, void *conten2);
+void	opti_sort6(t_data *data);
 
 #endif
