@@ -3,7 +3,7 @@ SRCS_FILES = get_input.c instruction_set.c secure_atoi.c destroy_and_exit.c arra
 			 custom_is2.c push_swap.c utils_sort2.c algo_qsort.c utils_sort3.c algo_for3.c\
 			 algo_custom_sort.c algo_low.c utils_stack2.c utils_sort4.c algo_custom_sort2.c\
 			 algo_custom_sort3.c utils_sort5.c algo_custom_sort4.c algo_custom_sort5.c\
-			 algo_custom_sort6.c
+			 algo_custom_sort6.c algo_bf.c
 
 SRCS_DIR = ./srcs/
 
@@ -19,8 +19,8 @@ NAME = push_swap
 
 CC = cc
 
-#CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+#CFLAGS = -Wall -Wextra -Werror
 
 all : ${NAME}
 

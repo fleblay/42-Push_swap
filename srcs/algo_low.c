@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:06:04 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 16:53:26 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 17:36:09 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 //Appeler plusieurs fois avec des valeurs incrementales
 // 7 uniquement pour des petit sets (5 par exemple)	
 // sinon mettre 5 max pour etre instant
+/*
 int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 {
 	//On essaie de limiter les operations dispo
@@ -40,16 +41,16 @@ int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 		}
 	while (i < 11 && depth < max_depth)
 	{
-		sol[depth] = tab[i];
-		/*
-		int j = 0;
-		
-		while (j < 4)
-		{
-			printf("sol[%d] : %s\n", j, sol[j]);
-			j++;
-		}
-		*/
+		//sol[depth] = tab[i];
+		//
+		//int j = 0;
+		//
+		//while (j < 4)
+		//{
+		//	printf("sol[%d] : %s\n", j, sol[j]);
+		//	j++;
+		//}
+		//
 		// Obvious check a eviter
 		// ie 2 sa colles ou 2 sb colles
 		if ((sol[0] == tab[0] && sol[1] == tab[0])
@@ -72,13 +73,13 @@ int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 		if (sort_bf(data, sol, depth + 1, max_depth))
 			return (1);	
 		//Pour trouver toutes les solutions
-		/*
-		if (!checker_array(sol, data->s1, data->s1size))
-		{
-			sol[depth] = 0;
-		}
-		i++;
-		*/
+		//
+		//if (!checker_array(sol, data->s1, data->s1size))
+		//{
+		//	sol[depth] = 0;
+		//}
+		//i++;
+		//
 		//Pour trouver une seule solution
 		if (!checker_array(sol, data->s1, data->s1size))
 		{
@@ -91,3 +92,4 @@ int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 	//printf("return.i : %d deeper : %d\n", i,  depth);
 	return (0);
 }
+*/

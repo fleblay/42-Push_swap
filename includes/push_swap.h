@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 14:52:04 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 17:29:13 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,6 @@ int		print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb);
 void	print_opti_instruct(t_list *start);
 int		printer2(void *content1, void *conten2);
 void	opti_sort6(t_data *data);
+int		iterator_bf(t_data *data);
 
 #endif

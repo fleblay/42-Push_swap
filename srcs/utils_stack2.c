@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 14:40:09 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/07 10:05:32 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 17:11:31 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int	checker(t_list *instruct, long *input, int input_size)
 	return (res);
 }
 
-//on a rajoute la taille de la stack fixe
 int checker_array(char **tab, long *input, int input_size)
 {
 	t_data	test_data;
