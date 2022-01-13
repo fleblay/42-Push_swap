@@ -6,12 +6,13 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:43:42 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/03 18:48:31 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 15:39:43 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+#include <stdio.h>
 
 int	is_atoiable(char **tab)
 {
@@ -53,7 +54,9 @@ int	is_uniq(long tab[], int size)
 		while (j < size)
 		{
 			if (tab[i] == tab[j])
+			{
 				return (0);
+			}
 			j++;
 		}
 		i++;

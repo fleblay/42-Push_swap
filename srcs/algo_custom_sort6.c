@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:51:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 15:19:24 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/13 15:25:42 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	opti_sort6(t_data *data)
 		if (get_mediane_stack(data->l1, data->l1size) == pivot)
 			break ;
 		pivot = get_mediane_stack(data->l1, data->l1size);
+		printf("pivot : %d\n", pivot);
 		i = 0;
 		old_l1size = data->l1size;
 		while (i < old_l1size && get_index_first_le(data->l1, pivot) != -1)
@@ -40,7 +41,7 @@ void	opti_sort6(t_data *data)
 		}
 	}
 	print_lst(*data);
-	printf("nb instruct : %d\n", ft_lstsize(data->start));
+	printf("nb instruct no opti: %d\n", ft_lstsize(data->start));
 	while (data->l2size)
 	{
 		print_infob(data, &to_moveina, &to_moveinb);
@@ -50,5 +51,5 @@ void	opti_sort6(t_data *data)
 	}
 	move_top(data, get_smallest_valuea(data));
 	print_lst(*data);
-	printf("nb instruct : %d\n", ft_lstsize(data->start));
+	printf("nb instruct no opti: %d\n", ft_lstsize(data->start));
 }
