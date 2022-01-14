@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:15:15 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 12:46:02 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 17:25:45 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int	iterator_bf(t_data *data)
 
 	cleaner(sol, 10);
 	max_depth = 1;
-	while (max_depth < 8)
+	while (max_depth < 10)
 	{
 		if (sort_bf(data, sol, 0, max_depth))
 			break ;
 		max_depth++;
 	}
-	if (max_depth == 8)
+	if (max_depth == 10)
 		return (0);
 	else
 	{

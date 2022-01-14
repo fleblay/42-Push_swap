@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 09:51:54 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 17:02:07 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int ac, char *av[])
 		sort_3a(&data);
 	else if (data.s1size < 6)
 		iterator_bf(&data);
-	else if (data.s1size <= 80)
+	else if (data.s1size <= 101)
 		opti_sort5(&data);
 	else
 		opti_sort6(&data);
