@@ -6,38 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:42:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/10 16:42:55 by fred             ###   ########.fr       */
+/*   Updated: 2022/01/14 10:34:49 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
-
-int	spot_misfits(t_list *lst)
-{
-	//int	prev_value;
-	int	curr_value;
-	int	ncurr_value;
-	int nb;
-
-	nb = 0;
-//	prev_value = *((int *)(lst->content));
-	lst = lst->next;
-	while (lst && lst->next)
-	{
-		curr_value = *((int *)(lst->content));
-		ncurr_value = *((int *)(lst->next->content));
-		if (curr_value > ncurr_value)
-		{
-			printf("misfit : %d\n", curr_value);
-			nb++;
-		}
-		//prev_value = curr_value;
-		lst = lst->next;
-	}
-	return (nb);
-}
 
 int	is_sorted(t_list *lst)
 {
@@ -118,3 +92,28 @@ int	gnvbp(t_data *data, int pivot, int start, int size)
 	}
 	return (pivot);
 }
+
+/*
+#include <stdio.h>
+int	spot_misfits(t_list *lst)
+{
+	int	curr_value;
+	int	ncurr_value;
+	int nb;
+
+	nb = 0;
+	lst = lst->next;
+	while (lst && lst->next)
+	{
+		curr_value = *((int *)(lst->content));
+		ncurr_value = *((int *)(lst->next->content));
+		if (curr_value > ncurr_value)
+		{
+			printf("misfit : %d\n", curr_value);
+			nb++;
+		}
+		lst = lst->next;
+	}
+	return (nb);
+}
+*/

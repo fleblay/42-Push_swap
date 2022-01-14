@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 19:04:08 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 11:27:37 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 11:54:24 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,31 @@ int	rrr(t_data *data)
 	ft_lstadd_back(&(data->start), new_instruct);
 	rra(data);
 	rrb(data);
+	return (1);
+}
+
+int	update_size(t_data *data)
+{
+	t_list	*index;
+	int		i;
+
+	if (!data)
+		return (-1);
+	index = data->l1;
+	i = 0;
+	while (index)
+	{
+		i++;
+		index = index->next;
+	}
+	data->l1size = i;
+	i = 0;
+	index = data->l2;
+	while (index)
+	{
+		i++;
+		index = index->next;
+	}
+	data->l2size = i;
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:33:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/11 18:44:21 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 10:38:08 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	get_mediane_stack(t_list *start, int stack_size)
 	int	*tmp_tab;
 	int	med;
 
-	if (!stack_size)
-		return (-1);
 	tmp_tab = (int *)malloc(stack_size * sizeof(int));
 	if (!tmp_tab)
 		return (-1);
@@ -113,16 +111,4 @@ int	get_biggest_valueb(t_data *data)
 		start = start->next;
 	}
 	return (big);
-}
-
-void	push_biggest_valuea(t_data *data)
-{
-	move_top(data, get_biggest_valuea(data));
-	pb(data);
-}
-
-void	push_biggest_valueb(t_data *data)
-{
-	move_topb(data, get_biggest_valueb(data));
-	pa(data);
 }

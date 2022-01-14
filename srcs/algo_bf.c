@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:15:15 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 17:39:13 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 12:46:02 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,25 @@
 #include "libft.h"
 #include <stdio.h>
 
+static void	cleaner(char *sol[], int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		sol[i] = NULL;
+		i++;
+	}
+}
+
 int	iterator_bf(t_data *data)
 {
 	char	*sol[10];
 	int		max_depth;
 	int		i;
 
-	ft_bzero(sol, 10);
+	cleaner(sol, 10);
 	max_depth = 1;
 	while (max_depth < 8)
 	{
@@ -45,12 +57,12 @@ int	iterator_bf(t_data *data)
 
 int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 {
-	char	*tab[6] = {"sa", "pb", "rra", "ra", "sb", "pa"};
-	int		i;
+	static char	*tab[6] = {"sa", "pb", "rra", "ra", "sb", "pa"};
+	int			i;
 
 	i = 0;
 	if (checker_array(sol, data->s1, data->s1size))
-			return (1);
+		return (1);
 	while (i < 6 && depth < max_depth)
 	{
 		sol[depth] = tab[i];
@@ -60,7 +72,7 @@ int	sort_bf(t_data *data, char **sol, int depth, int max_depth)
 		if (checker_array(sol, data->s1, data->s1size))
 			return (1);
 		if (sort_bf(data, sol, depth + 1, max_depth))
-			return (1);	
+			return (1);
 		if (!checker_array(sol, data->s1, data->s1size))
 		{
 			sol[depth] = 0;

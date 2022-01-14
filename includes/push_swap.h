@@ -6,16 +6,16 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 17:29:13 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 12:50:04 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft.h"
+# include "libft.h"
 
-typedef	struct s_data {
+typedef struct s_data {
 	long	*s1;
 	int		*sorted_s1;
 	int		*max_loop;
@@ -82,7 +82,7 @@ int		get_mediane_stack(t_list *start, int stack_size);
 void	sort_3a(t_data *data);
 void	do_instruct(void *content, t_data *test_data);
 int		checker(t_list *instruct, long *input, int input_size);
-int	sort_bf(t_data *data, char **sol, int depth, int max_depth);
+int		sort_bf(t_data *data, char **sol, int depth, int max_depth);
 int		checker_array(char **tab, long *input, int input_size);
 void	opti_sort(t_data *data);
 int		get_index_first_le(t_list *start, int value);
@@ -90,11 +90,8 @@ int		get_index_first_g(t_list *start, int value);
 int		get_index_first_l(t_list *start, int value);
 void	sort_3b(t_data *data);
 int		*get_sorted_array(long *tab, int begin, int end);
-int		spot_misfits(t_list *lst);
 int		get_biggest_valuea(t_data *data);
 int		get_biggest_valueb(t_data *data);
-void	push_biggest_valuea(t_data *data);
-void	push_biggest_valueb(t_data *data);
 int		get_final_index(t_data *data, int value);
 int		get_nb_sorted(t_data *data, int start_value);
 int		get_start_max_sorted(t_data *data);
@@ -113,14 +110,18 @@ int		r_get_index_first_l(t_list *start, int value);
 int		r_get_index_first_le(t_list *start, int value);
 int		calculate_cheapest_move(t_data *data, int index_a, int index_b);
 void	opti_sort4(t_data *data);
-int		calculate_cheapest_move_b(t_data* data, int index_big, int index_low);
+int		calculate_cheapest_move_b(t_data *data, int index_big, int index_low);
 void	opti_sort5(t_data *data);
 int		cost_mvtop(t_data *data, int value);
 int		cost_mvtopb(t_data *data, int value);
-int		print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb);
 void	print_opti_instruct(t_list *start);
 int		printer2(void *content1, void *conten2);
 void	opti_sort6(t_data *data);
 int		iterator_bf(t_data *data);
+int		print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb, t_list *strt);
 
 #endif
+/*
+int		print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb);
+int		spot_misfits(t_list *lst);
+*/

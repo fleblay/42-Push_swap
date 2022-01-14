@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 11:15:19 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/06 12:56:25 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 10:11:19 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,6 @@ int	mem_move_topb(t_data *data, int value, int *n_iter, int (**f_inv)())
 	*n_iter = n;
 	return (1);
 }
-//faire mem_move_top avec 1er swap si on veut retrouver l'ordre initial
-//Utile retrouver ordre init ???
 
 int	swap(t_data *data, int val1, int val2)
 {
@@ -117,7 +115,6 @@ int	swap(t_data *data, int val1, int val2)
 		return (0);
 	if (get_index(data->l1, val1) < 0 || get_index(data->l1, val2) < 0)
 		return (-1);
-//	printf("making swap a\n");
 	update_size(data);
 	mem_move_top(data, val1, &n1, &f1);
 	pb(data);

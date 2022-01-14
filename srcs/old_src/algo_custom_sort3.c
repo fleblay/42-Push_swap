@@ -6,13 +6,20 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 09:17:33 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 09:22:58 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 10:39:20 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 #include <stdio.h>
+
+static void	push_biggest_valueb(t_data *data)
+{
+	move_topb(data, get_biggest_valueb(data));
+	pa(data);
+}
+
 
 void	opti_sort3(t_data *data)
 {

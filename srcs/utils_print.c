@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_stack.c                                      :+:      :+:    :+:   */
+/*   utils_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 18:43:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 16:41:19 by fle-blay         ###   ########.fr       */
+/*   Created: 2022/01/14 11:56:52 by fle-blay          #+#    #+#             */
+/*   Updated: 2022/01/14 11:58:14 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 void	printer(void *content)
 {
@@ -71,7 +70,7 @@ int	printer2(void *content1, void *content2)
 
 void	print_instruct(t_list *start)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (start)
@@ -80,12 +79,11 @@ void	print_instruct(t_list *start)
 		count++;
 		start = start->next;
 	}
-//	printf("nb ope : %d\n", count);
 }
 
 void	print_opti_instruct(t_list *start)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (start)
@@ -110,73 +108,4 @@ void	print_opti_instruct(t_list *start)
 		}
 		start = start->next;
 	}
-	/*
-	ft_putstr_fd("nb ope : ", 1);
-	ft_putnbr_fd(count, 1);
-	ft_putstr_fd("\n", 1);
-	*/
-}
-
-
-void	print_size(t_data data)
-{
-	ft_putstr_fd("size a : ", 1);
-	ft_putnbr_fd(data.l1size, 1);
-	ft_putstr_fd("\n", 1);
-	ft_putstr_fd("size b : ", 1);
-	ft_putnbr_fd(data.l2size, 1);
-	ft_putstr_fd("\n", 1);
-}
-
-void	print_lst(t_data data)
-{
-	t_list	*i1;
-	t_list	*i2;
-
-	i1 = data.l1;
-	i2 = data.l2;
-	while (data.s1size-- && (i1 || i2))
-	{
-		if (i1)
-		{
-			ft_putnbr_fd(*((int *)(i1->content)), 1);
-			i1 = i1->next;
-		}
-		ft_putstr_fd(" || ", 1);
-		if (i2)
-		{
-			ft_putnbr_fd(*((int *)(i2->content)), 1);
-			i2 = i2->next;
-		}
-		if (i1 || i2)
-			ft_putstr_fd("\n", 1);
-	}
-	ft_putstr_fd("\n", 1);
-	print_size(data);
-}
-
-int	update_size(t_data *data)
-{
-	t_list	*index;
-	int		i;
-
-	if (!data)
-		return (-1);
-	index = data->l1;
-	i = 0;
-	while (index)
-	{
-		i++;
-		index = index->next;
-	}
-	data->l1size = i;
-	i = 0;
-	index = data->l2;
-	while (index)
-	{
-		i++;
-		index = index->next;
-	}
-	data->l2size = i;
-	return (1);
 }

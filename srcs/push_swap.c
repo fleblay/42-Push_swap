@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 17:41:35 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 09:51:54 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	main(int ac, char *av[])
 		opti_sort5(&data);
 	else
 		opti_sort6(&data);
-	//print_instruct(data.start);
 	print_opti_instruct(data.start);
 	custom_exit(0, &data);
 	return (0);
