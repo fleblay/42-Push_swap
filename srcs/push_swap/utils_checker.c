@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 12:01:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 12:55:25 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 14:50:31 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	do_instruct(void *content, t_data *test_data)
 		rr(test_data);
 	else if (!(ft_strncmp(content, "rrr", 5)))
 		rrr(test_data);
-
 }
 
 int	checker(t_list *instruct, long *input, int input_size)

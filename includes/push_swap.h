@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 12:50:04 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/14 16:32:25 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+
+# define BUFFER_SIZE 32
 
 typedef struct s_data {
 	long	*s1;
@@ -119,8 +121,13 @@ int		printer2(void *content1, void *conten2);
 void	opti_sort6(t_data *data);
 int		iterator_bf(t_data *data);
 int		print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb, t_list *strt);
+char	*get_next_line(int fd);
+void	do_instruct_gnl(void *content, t_data *test_data);
+void	custom_exit_checker(int error, t_data *data, char *curr_instruct);
+int		check_input(t_list *start);
 
 #endif
+
 /*
 int		print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb);
 int		spot_misfits(t_list *lst);
