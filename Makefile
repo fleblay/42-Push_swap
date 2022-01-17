@@ -12,11 +12,10 @@ SRCS_FILES = algo_bf.c algo_custom_sort5.c algo_custom_sort6.c algo_for3.c array
 			utils_sort.c utils_sort2.c utils_sort3.c utils_sort4.c utils_sort5.c\
 			utils_sort6.c utils_print.c utils_print2.c utils_checker.c\
 
-CHECKER_FILES = algo_bf.c algo_custom_sort5.c algo_custom_sort6.c algo_for3.c array_test.c\
-			custom_is.c destroy_and_exit.c get_input.c instruction_set.c instruction_set2.c\
-			instruction_set3.c checker.c secure_atoi.c utils_cost.c utils_max_loop.c\
-			utils_sort.c utils_sort2.c utils_sort3.c utils_sort4.c utils_sort5.c\
-			utils_sort6.c utils_print.c utils_print2.c utils_checker.c get_next_line.c
+CHECKER_FILES = array_test.c\
+			destroy_and_exit.c get_input.c instruction_set.c instruction_set2.c\
+			instruction_set3.c checker.c secure_atoi.c \
+			utils_checker.c get_next_line.c utils_sort2.c
 
 SRCS_DIR = ./srcs/push_swap/
 CHECKER_DIR = ./srcs/checker/
