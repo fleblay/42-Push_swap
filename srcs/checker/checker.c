@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:38:40 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/17 10:11:26 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/17 10:39:55 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	main(int ac, char *av[])
 		return (0);
 	data.start = NULL;
 	data.s1 = get_int_tab(av, &(data.s1size));
-	//data.sorted_s1 = get_sorted_array(data.s1, 0, data.s1size - 1);
 	data.l1 = listify(data.s1, data.s1size);
 	data.l2 = listify(data.s1, 0);
 	update_size(&data);
