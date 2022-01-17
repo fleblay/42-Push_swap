@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:15:15 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 17:25:45 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/17 16:21:36 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	iterator_bf(t_data *data)
 	else
 	{
 		i = 0;
-		while (i < max_depth)
+		while (i < max_depth && sol[i])
 		{
 			ft_putstr_fd(sol[i], 1);
 			ft_putstr_fd("\n", 1);
