@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:38:40 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/17 10:39:55 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/18 10:33:34 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <unistd.h>
 #include "libft.h"
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	load_input_checker(t_data *data)
 {
@@ -28,10 +27,12 @@ static void	load_input_checker(t_data *data)
 		if (!new_elem)
 			custom_exit_checker(1, data, curr_instruct);
 		ft_lstadd_back(&(data->start), new_elem);
+		if (!check_input(data->start))
+			custom_exit_checker(1, data, NULL);
 		curr_instruct = get_next_line(0);
 	}
 	if (!check_input(data->start))
-		custom_exit_checker(1, data, NULL);
+		custom_exit_checker(1, data, curr_instruct);
 }
 
 int	main(int ac, char *av[])

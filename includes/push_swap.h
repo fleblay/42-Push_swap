@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 16:32:25 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/18 10:10:14 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft.h"
 
-# define BUFFER_SIZE 32
+# define BUFFER_SIZE 1
 
 typedef struct s_data {
 	long	*s1;
