@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:38:40 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/18 10:33:34 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/18 10:57:26 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int ac, char *av[])
 {
 	t_data	data;
 
-	if (ac != 2)
+	if (ac == 1)
 		return (0);
 	data.start = NULL;
 	data.s1 = get_int_tab(av, &(data.s1size));
