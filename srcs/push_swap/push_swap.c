@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/19 12:56:48 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/19 15:54:14 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,31 @@
 #include "push_swap.h"
 #include <stdlib.h>
 
+static void	initialize(t_data *data)
+{
+	data->s1 = NULL;
+	data->sorted_s1 = NULL;
+	data->max_loop = NULL;
+	data->ml_size = 0;
+	data->s1size = 0;
+	data->l1 = NULL;
+	data->l1size = 0;
+	data->l2 = 0;
+	data->l2size = 0;
+	data->start = 0;
+}
+
 int	main(int ac, char *av[])
 {
 	t_data	data;
 
 	if (ac == 1)
 		return (0);
+	/*
 	data.start = NULL;
 	data.max_loop = NULL;
+	*/
+	initialize(&data);
 	data.s1 = get_int_tab(av, &(data.s1size));
 	data.sorted_s1 = get_sorted_array(data.s1, 0, data.s1size - 1);
 	data.l1 = listify(data.s1, data.s1size);
