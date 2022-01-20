@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 11:44:42 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 12:08:59 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,6 @@
 #include <stdio.h>
 #include "push_swap.h"
 #include <stdlib.h>
-
-void	initialize(t_data *data)
-{
-	data->s1 = NULL;
-	data->sorted_s1 = NULL;
-	data->max_loop = NULL;
-	data->ml_size = 0;
-	data->s1size = 0;
-	data->l1 = NULL;
-	data->l1size = 0;
-	data->l2 = NULL;
-	data->l2size = 0;
-	data->start = 0;
-	data->error = 0;
-}
 
 int	main(int ac, char *av[])
 {

@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 19:04:08 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 11:15:27 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 12:27:49 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ss(t_data *data)
 
 	new_instruct = ft_lstnew(&"ss");
 	if (!new_instruct)
-		custom_exit(0, data);
+		custom_exit_checker(0, data, NULL);
 	ft_lstadd_back(&(data->start), new_instruct);
 	sa(data);
 	sb(data);
@@ -32,7 +32,7 @@ int	rr(t_data *data)
 
 	new_instruct = ft_lstnew(&"rr");
 	if (!new_instruct)
-		custom_exit(0, data);
+		custom_exit_checker(0, data, NULL);
 	ft_lstadd_back(&(data->start), new_instruct);
 	ra(data);
 	rb(data);
@@ -45,7 +45,7 @@ int	rrr(t_data *data)
 
 	new_instruct = ft_lstnew(&"rrr");
 	if (!new_instruct)
-		custom_exit(0, data);
+		custom_exit_checker(0, data, NULL);
 	ft_lstadd_back(&(data->start), new_instruct);
 	rra(data);
 	rrb(data);
