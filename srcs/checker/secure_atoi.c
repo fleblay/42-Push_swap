@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:51:36 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 15:30:19 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 17:10:33 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ long	ft_atol(const char *nptr, int *error)
 		if ((sign == -1 && nbr > 2147483648) || (sign == 1 && nbr > 2147483647))
 			*error = 1;
 	}
-	*error = (nptr[i] != '\0');
+	*error += (nptr[i] != '\0');
 	return (sign * nbr);
 }
