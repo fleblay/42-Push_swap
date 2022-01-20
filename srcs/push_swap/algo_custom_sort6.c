@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:51:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 11:46:39 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 18:25:50 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	opti_sort6(t_data *data)
 	int	to_moveinb;
 	int	to_moveina;
 
+	if (is_sorted(data->l1))
+		return ;
 	opti_sort6_a_to_b(data);
 	while (data->l1size > data->ml_size)
 	{

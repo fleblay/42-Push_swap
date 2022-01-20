@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 09:36:29 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 12:08:59 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 18:19:56 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ int	main(int ac, char *av[])
 	data.sorted_s1 = get_sorted_array(data.s1, 0, data.s1size - 1);
 	data.l1 = listify(data.s1, data.s1size);
 	update_size(&data);
-	if (data.s1size < 2 || !data.l1 || !data.sorted_s1)
+	if (data.s1size == 1)
 		custom_exit(0, &data);
+	if (data.s1size == 0 || !data.l1 || !data.sorted_s1)
+		custom_exit(1, &data);
 	data.max_loop = make_tab_max_sorted(&data);
 	if (data.s1size == 3)
 		sort_3a(&data);
