@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:45:54 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/17 10:51:18 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 11:15:46 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	sa(t_data *data)
 		return (-1);
 	new_instruct = ft_lstnew(&"sa");
 	if (!new_instruct)
-		custom_exit(1, data);
+		custom_exit(0, data);
 	ft_lstadd_back(&(data->start), new_instruct);
 	oldl1n = data->l1->next;
 	oldl1nn = data->l1->next->next;
@@ -43,7 +43,7 @@ int	pb(t_data *data)
 		return (-1);
 	new_instruct = ft_lstnew(&"pb");
 	if (!new_instruct)
-		custom_exit(1, data);
+		custom_exit(0, data);
 	ft_lstadd_back(&(data->start), new_instruct);
 	oldl1 = data->l1;
 	data->l1 = data->l1->next;
@@ -62,7 +62,7 @@ int	ra(t_data *data)
 		return (-1);
 	new_instruct = ft_lstnew(&"ra");
 	if (!new_instruct)
-		custom_exit(1, data);
+		custom_exit(0, data);
 	ft_lstadd_back(&(data->start), new_instruct);
 	oldl1n = data->l1->next;
 	index = data->l1;
@@ -84,7 +84,7 @@ int	rra(t_data *data)
 		return (-1);
 	new_instruct = ft_lstnew(&"rra");
 	if (!new_instruct)
-		custom_exit(1, data);
+		custom_exit(0, data);
 	ft_lstadd_back(&(data->start), new_instruct);
 	index = data->l1;
 	while (index->next->next)

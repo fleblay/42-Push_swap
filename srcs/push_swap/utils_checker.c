@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 12:01:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 14:50:31 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 10:14:40 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,11 @@ int	checker(t_list *instruct, long *input, int input_size)
 	t_data	test_data;
 	int		res;
 
-	test_data.start = NULL;
+	initialize(&test_data);
 	test_data.s1 = input;
 	test_data.l1 = listify(input, input_size);
-	test_data.l2 = listify(input, 0);
+	if (!test_data.l1)
+		return (-1);
 	update_size(&test_data);
 	while (instruct)
 	{
@@ -71,10 +72,11 @@ int	checker_array(char **tab, long *input, int input_size)
 	int		i;
 	int		l1sizeinit;
 
-	test_data.start = NULL;
+	initialize(&test_data);
 	test_data.s1 = input;
 	test_data.l1 = listify(input, input_size);
-	test_data.l2 = listify(input, 0);
+	if (!test_data.l1)
+		return (-1);
 	update_size(&test_data);
 	l1sizeinit = test_data.l1size;
 	i = 0;

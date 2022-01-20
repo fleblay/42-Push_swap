@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 10:41:43 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 11:12:23 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 10:59:51 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	*make_tab_max_sorted(t_data *data)
 	i = 0;
 	tab = malloc(sizeof(int) * (nb_sorted + 1));
 	if (!tab)
-		return (NULL);
+		custom_exit(0, data);
 	data->ml_size = nb_sorted + 1;
 	while (i < nb_sorted + 1)
 	{

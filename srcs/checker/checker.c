@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:38:40 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/18 10:57:26 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 11:59:11 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ int	main(int ac, char *av[])
 	data.start = NULL;
 	data.s1 = get_int_tab(av, &(data.s1size));
 	data.l1 = listify(data.s1, data.s1size);
-	data.l2 = listify(data.s1, 0);
+	data.l2 = NULL;
+	if (!data.s1 || !data.l1)
+		custom_exit_checker(0, &data, NULL);
 	update_size(&data);
 	load_input_checker(&data);
 	if (checker(data.start, data.s1, data.s1size))

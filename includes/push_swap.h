@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:29:50 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/18 10:10:14 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/20 11:35:54 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_data {
 	t_list	*l2;
 	int		l2size;
 	t_list	*start;
+	int		error;
 }			t_data;
 
 long	ft_atol(const char *nptr, int *error);
@@ -80,7 +81,7 @@ t_list	*listify(long *tab_int, int size);
 int		get_index_first_ge(t_list *start, int value);
 int		get_index(t_list *start, int value);
 void	custom_swap(int *a, int *b, int *index);
-int		get_mediane_stack(t_list *start, int stack_size);
+int		get_mediane_stack(t_list *start, int stack_size, int *error);
 void	sort_3a(t_data *data);
 void	do_instruct(void *content, t_data *test_data);
 int		checker(t_list *instruct, long *input, int input_size);
@@ -125,10 +126,6 @@ char	*get_next_line(int fd);
 void	do_instruct_gnl(void *content, t_data *test_data);
 void	custom_exit_checker(int error, t_data *data, char *curr_instruct);
 int		check_input(t_list *start);
+void	initialize(t_data *data);
 
 #endif
-
-/*
-int		print_infob(t_data *data, int *to_mvtopa, int *to_mvtopb);
-int		spot_misfits(t_list *lst);
-*/
