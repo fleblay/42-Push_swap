@@ -6,13 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:15:15 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 11:10:34 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:31:11 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 static void	cleaner(char *sol[], int size)
 {

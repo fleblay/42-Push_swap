@@ -6,13 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:16:37 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 11:13:45 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:35:00 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 int	is_in_loop_max_sorted(t_data *data, int value)
 {

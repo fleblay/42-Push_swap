@@ -6,13 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 10:31:19 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 11:19:38 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:35:09 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 int	get_value(t_list *start, int index)
 {

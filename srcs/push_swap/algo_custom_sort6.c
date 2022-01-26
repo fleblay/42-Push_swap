@@ -6,13 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:51:28 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 18:25:50 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:31:26 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 static void	opti_sort6_a_to_b(t_data *data)
 {

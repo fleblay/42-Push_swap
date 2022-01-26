@@ -6,12 +6,11 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:38:40 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 18:24:57 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:45:28 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#include <stddef.h>
 #include "libft.h"
 #include "push_swap.h"
 

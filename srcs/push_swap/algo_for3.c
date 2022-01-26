@@ -6,12 +6,11 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:49:23 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 11:06:44 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:31:39 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 void	sort_3a(t_data *data)
 {

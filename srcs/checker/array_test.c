@@ -6,13 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:43:42 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/13 15:39:43 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:44:50 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 int	is_atoiable(char **tab)
 {

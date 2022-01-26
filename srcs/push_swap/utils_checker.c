@@ -6,13 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 12:01:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 10:14:40 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:34:44 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 void	do_instruct(void *content, t_data *test_data)
 {

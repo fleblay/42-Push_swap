@@ -6,14 +6,13 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:16:12 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 09:48:18 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:33:31 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
-#include <stdio.h>
 #include "push_swap.h"
+#include <stdlib.h>
 
 char	**get_char_tab(char *av[])
 {

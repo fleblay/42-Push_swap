@@ -6,13 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 11:15:19 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 18:13:48 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:32:03 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 int	move_top(t_data *data, int value)
 {

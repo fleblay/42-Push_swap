@@ -6,13 +6,12 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 09:25:13 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/14 10:45:53 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:35:05 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 int	r_get_index_first_g(t_list *start, int value)
 {
