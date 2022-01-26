@@ -6,7 +6,7 @@
 /*   By: fle-blay <fle-blay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:35:10 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/01/20 10:02:55 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/01/26 15:17:24 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	*ft_destroytab(char **tab, int index)
 		}
 		free(tab);
 	}
-	return (tab);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
